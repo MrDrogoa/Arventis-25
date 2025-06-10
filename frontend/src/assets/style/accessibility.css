@@ -1,0 +1,160 @@
+/* Estilos para mejoras de accesibilidad visual */
+
+/* Modo descanso visual - reduce la fatiga ocular */
+.rest-mode {
+  --bg-color: #f0ebe1; /* Fondo beige suave */
+  --text-color: #333333; /* Texto oscuro pero no negro puro */
+  --heading-color: #484444; /* Encabezados ligeramente más oscuros */
+  --link-color: #0d548a; /* Enlaces azul oscuro, menos intenso */
+  --primary-bg: #5d8ba3; /* Azul apagado en lugar de azul brillante */
+  --secondary-bg: #e6e0d4; /* Beige más claro para elementos secundarios */
+  --border-color: #ccc7be; /* Bordes suaves */
+  --shadow-color: rgba(0, 0, 0, 0.1); /* Sombras más suaves */
+  --card-bg: #f8f5ef; /* Fondo de tarjetas ligeramente diferente */
+}
+
+/* Aplicación base del modo descanso */
+.rest-mode body,
+.rest-mode #app {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Encabezados */
+.rest-mode h1, .rest-mode h2, .rest-mode h3, .rest-mode h4, .rest-mode h5, .rest-mode h6 {
+  color: var(--heading-color);
+}
+
+/* Enlaces */
+.rest-mode a {
+  color: var(--link-color);
+}
+
+.rest-mode a:hover {
+  color: var(--link-color);
+  opacity: 0.8;
+}
+
+/* Áreas de navegación */
+.rest-mode .navbar,
+.rest-mode .bg-light {
+  background-color: var(--secondary-bg) !important;
+  border-color: var(--border-color);
+}
+
+.rest-mode .navbar-light .navbar-nav .nav-link {
+  color: var(--text-color);
+}
+
+.rest-mode .dropdown-menu {
+  background-color: var(--secondary-bg);
+  border-color: var(--border-color);
+}
+
+/* Áreas primarias */
+.rest-mode .bg-primary {
+  background-color: var(--primary-bg) !important;
+  color: var(--secondary-bg);
+}
+
+.rest-mode .text-primary {
+  color: var(--link-color) !important;
+}
+
+/* Tarjetas y elementos contenedores */
+.rest-mode .card,
+.rest-mode .modal-content,
+.rest-mode .dropdown-menu {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+  box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+/* Botones */
+.rest-mode .btn-primary {
+  background-color: var(--primary-bg);
+  border-color: var(--primary-bg);
+  color: #fff;
+}
+
+.rest-mode .btn-light {
+  background-color: var(--secondary-bg);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
+.rest-mode .btn-outline-light {
+  border-color: var(--secondary-bg);
+  color: var(--secondary-bg);
+}
+
+/* Campos de formulario */
+.rest-mode .form-control {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
+.rest-mode .form-control:focus {
+  border-color: var(--link-color);
+  box-shadow: 0 0 0 0.2rem rgba(13, 84, 138, 0.25);
+}
+
+/* Reducción de intensidad de imágenes */
+.rest-mode img {
+  filter: brightness(0.95) contrast(0.95);
+}
+
+/* Hero sections y áreas destacadas */
+.rest-mode .hero-section {
+  background: linear-gradient(135deg, var(--primary-bg) 0%, #4a7384 100%);
+}
+
+/* Footer */
+.rest-mode footer.bg-dark {
+  background-color: #444 !important;
+  color: #eee;
+}
+
+/* Tamaños de texto aumentados */
+.text-large {
+  font-size: 1.2rem;
+}
+
+.text-xlarge {
+  font-size: 1.4rem;
+}
+
+.text-xxlarge {
+  font-size: 1.6rem;
+}
+
+.text-large h1, .text-xlarge h1, .text-xxlarge h1 {
+  font-size: 2.5rem;
+}
+
+.text-large h2, .text-xlarge h2, .text-xxlarge h2 {
+  font-size: 2.2rem;
+}
+
+.text-large .lead, .text-xlarge .lead, .text-xxlarge .lead {
+  font-size: 1.4rem;
+}
+
+/* Resaltar los enlaces y elementos interactivos al enfocarlos */
+a:focus, button:focus, input:focus, select:focus, textarea:focus {
+  outline: 3px solid #ff8c00 !important; /* Naranja para mayor visibilidad */
+  outline-offset: 2px;
+}
+
+/* Mejorar legibilidad */
+.improved-legibility {
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  word-spacing: 2px;
+}
+
+.rest-mode .improved-legibility {
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.05);
+}

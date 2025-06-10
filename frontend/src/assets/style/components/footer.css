@@ -1,0 +1,11 @@
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bi {
+  margin-right: 8px;
+}
+
+.social-icons .bi {
+  font-size: 1.5rem;
+}

@@ -1,0 +1,41 @@
+/* Estilos globales */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Efectos de transición para router-view */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.3s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+/* Espaciado para el contenido principal */
+#app {
+  overflow-x: hidden;
+}
+
+/* Asegura que el footer quede abajo */
+.min-vh-100 {
+  min-height: 100vh;
+}
+
+/* Estilos para enlaces */
+a {
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0a58ca;
+  text-decoration: underline;
+}
+
+/* Accesibilidad: enfoque visible */
+:focus {
+  outline: 3px solid rgba(13, 110, 253, 0.25);
+  outline-offset: 2px;
+}

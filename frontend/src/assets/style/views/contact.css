@@ -1,0 +1,49 @@
+.contact-info i {
+  width: 20px;
+  text-align: center;
+}
+
+.map-container {
+  overflow: hidden;
+}
+
+/* Estilos para el mensaje de éxito */
+.alert {
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Estilos para los asteriscos de campos requeridos */
+.form-label::after {
+  content: " *";
+  color: #dc3545;
+}
+
+/* El texto que ya incluye el asterisco de forma manual no necesita el pseudo-elemento */
+.form-check-label::after {
+  content: none;
+}
+
+/* Estilos para mejorar la accesibilidad */
+.form-control:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 0 0.2rem rgba(0, 86, 179, 0.25);
+}
+
+.invalid-feedback {
+  color: #dc3545;
+  font-weight: 500;
+}
+
+/* Asegurar contraste adecuado para errores */
+.is-invalid .form-control {
+  border-color: #dc3545;
+}
+
+.is-invalid .form-label {
+  color: #dc3545;
+}
