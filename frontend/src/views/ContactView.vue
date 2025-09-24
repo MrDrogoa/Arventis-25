@@ -15,7 +15,7 @@
             
             <!-- Mensaje de confirmación accesible -->
             <div 
-              v-if="formSubmitted" 
+              v-if="formSubmitted && !formError" 
               class="alert alert-success mb-4" 
               role="status" 
               ref="successMessage"
@@ -23,6 +23,19 @@
             >
               <i class="bi bi-check-circle me-2"></i>
               Mensaje enviado correctamente. Nos pondremos en contacto pronto.
+              <div v-if="messageId" class="mt-2 small">ID de mensaje: {{ messageId }}</div>
+            </div>
+            
+            <!-- Mensaje de error -->
+            <div
+              v-if="formError"
+              class="alert alert-danger mb-4"
+              role="status"
+              ref="errorMessage"
+              tabindex="-1"
+            >
+              <i class="bi bi-exclamation-triangle me-2"></i>
+              {{ errorMessage || "Ocurrió un error al enviar el mensaje. Por favor intente nuevamente." }}
             </div>
             
             <form 
@@ -37,6 +50,7 @@
                 <input
                   type="text"
                   class="form-control"
+                  :class="{'is-invalid': formSubmitted && !formData.name}"
                   id="name"
                   v-model="formData.name"
                   required
@@ -51,6 +65,7 @@
                 <input
                   type="email"
                   class="form-control"
+                  :class="{'is-invalid': formSubmitted && !isValidEmail(formData.email)}"
                   id="email"
                   v-model="formData.email"
                   required
@@ -65,6 +80,7 @@
                 <input
                   type="text"
                   class="form-control"
+                  :class="{'is-invalid': formSubmitted && !formData.subject}"
                   id="subject"
                   v-model="formData.subject"
                   required
@@ -78,6 +94,7 @@
                 <label for="message" class="form-label">Mensaje *</label>
                 <textarea
                   class="form-control"
+                  :class="{'is-invalid': formSubmitted && !formData.message}"
                   id="message"
                   rows="5"
                   v-model="formData.message"
@@ -91,12 +108,13 @@
               <div class="form-check mb-4">
                 <input
                   class="form-check-input"
+                  :class="{'is-invalid': formSubmitted && !formData.privacyAccepted}"
                   type="checkbox"
                   id="privacy"
-                  v-model="formData.privacy"
+                  v-model="formData.privacyAccepted"
                   required
                   aria-required="true"
-                  :aria-invalid="!formData.privacy && formSubmitted"
+                  :aria-invalid="!formData.privacyAccepted && formSubmitted"
                 />
                 <label class="form-check-label" for="privacy">
                   Acepto la <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal" class="text-decoration-none">política de privacidad</a> *
@@ -108,8 +126,10 @@
                 type="submit" 
                 class="btn btn-primary btn-lg"
                 aria-label="Enviar mensaje de contacto"
+                :disabled="isSubmitting"
               >
-                Enviar mensaje
+                <span v-if="isSubmitting" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                {{ isSubmitting ? 'Enviando...' : 'Enviar mensaje' }}
               </button>
             </form>
             
@@ -125,15 +145,15 @@
                 <ul class="list-unstyled contact-info">
                   <li class="mb-3">
                     <i class="bi bi-geo-alt-fill text-primary me-2"></i>
-                    <span>Calle Libertad 123, Ovalle, Chile</span>
+                    <span>Ruta D55, La Ensenada Sin Número, Ovalle</span>
                   </li>
                   <li class="mb-3">
                     <i class="bi bi-telephone-fill text-primary me-2"></i>
-                    <span>+56 9 4321 5678</span>
+                    <span>+56930905919</span>
                   </li>
                   <li class="mb-3">
                     <i class="bi bi-envelope-fill text-primary me-2"></i>
-                    <span>info@arventis.com</span>
+                    <span>contacto@arventis.cl</span>
                   </li>
                   <li>
                     <i class="bi bi-clock-fill text-primary me-2"></i>
@@ -192,6 +212,7 @@
 <script>
 // Import Bootstrap for modal handling
 import 'bootstrap';
+import contactMessagesApi from '@/api/contactMessages';
 
 export default {
   name: "ContactView",
@@ -202,36 +223,98 @@ export default {
         email: "",
         subject: "",
         message: "",
-        privacy: false,
+        privacyAccepted: false,
+        sourceUrl: "",
+        referrer: "",
+        metadata: {}
       },
       formSubmitted: false,
+      isSubmitting: false,
+      formError: false,
+      errorMessage: "",
+      messageId: null
+    };
+  },
+  created() {
+    // Capture source URL and referrer
+    this.formData.sourceUrl = window.location.href;
+    this.formData.referrer = document.referrer || "Arventis.cl";
+    
+    // Collect browser metadata
+    this.formData.metadata = {
+      browserInfo: navigator.userAgent,
+      screenResolution: `${window.screen.width}x${window.screen.height}`,
+      deviceType: /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) ? 'mobile' : 'desktop',
+      language: navigator.language
     };
   },
   methods: {
+    isValidEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    },
     validateForm() {
       // Validación básica de campos
-      return (
-        this.formData.name.trim() !== "" &&
-        this.formData.email.trim() !== "" &&
-        this.formData.subject.trim() !== "" &&
-        this.formData.message.trim() !== "" &&
-        this.formData.privacy
-      );
+      if (this.formData.name.trim() === "") {
+        this.errorMessage = "Por favor ingrese su nombre.";
+        return false;
+      }
+      
+      if (!this.isValidEmail(this.formData.email)) {
+        this.errorMessage = "Por favor ingrese un correo electrónico válido.";
+        return false;
+      }
+      
+      if (this.formData.subject.trim() === "") {
+        this.errorMessage = "Por favor ingrese un asunto.";
+        return false;
+      }
+      
+      if (this.formData.message.trim() === "") {
+        this.errorMessage = "Por favor ingrese su mensaje.";
+        return false;
+      }
+      
+      // Verificación ESTRICTA de que privacyAccepted es true
+      if (this.formData.privacyAccepted !== true) {
+        this.errorMessage = "Debe aceptar la política de privacidad.";
+        return false;
+      }
+      
+      return true;
     },
-    submitForm() {
+    async submitForm() {
+      // Marcar como enviado para mostrar errores de validación en el UI
+      this.formSubmitted = true;
+      
       // Validar el formulario antes de procesar
       if (!this.validateForm()) {
-        // Marcar como enviado para mostrar errores
-        this.formSubmitted = true;
+        this.formError = true;
         return;
       }
       
-      // Aquí iría la lógica para enviar el formulario a un servidor
-      console.log("Formulario enviado:", this.formData);
-      this.formSubmitted = true;
+      // Comenzar la carga
+      this.isSubmitting = true;
+      this.formError = false;
+      this.errorMessage = "";
       
-      // Simular respuesta exitosa y resetear formulario
-      setTimeout(() => {
+      try {
+        // Logging para depuración
+        console.log('Enviando formulario con datos:', JSON.stringify(this.formData, null, 2));
+        
+        // IMPORTANTE: Asegurar que privacyAccepted sea estrictamente un booleano true
+        const messageData = {
+          ...this.formData,
+          privacyAccepted: true,
+          submittedAt: new Date().toISOString()
+        };
+        
+        // Enviar datos al API
+        const response = await contactMessagesApi.submitMessage(messageData);
+        
+        // Guardar el ID del mensaje
+        this.messageId = response.messageId;
+        
         // Resetear formulario pero mantener el mensaje visible
         this.resetForm();
         
@@ -243,7 +326,21 @@ export default {
           // Hacer scroll suave hacia arriba 
           document.getElementById('content').scrollIntoView({ behavior: 'smooth' });
         });
-      }, 1000);
+        
+      } catch (error) {
+        console.error("Error al enviar formulario:", error);
+        this.formError = true;
+        this.errorMessage = error.message || "Ocurrió un error al enviar el mensaje. Por favor intente nuevamente.";
+        
+        // Enfocar el mensaje de error para lectores de pantalla
+        this.$nextTick(() => {
+          if (this.$refs.errorMessage) {
+            this.$refs.errorMessage.focus();
+          }
+        });
+      } finally {
+        this.isSubmitting = false;
+      }
     },
     resetForm() {
       this.formData = {
@@ -251,26 +348,20 @@ export default {
         email: "",
         subject: "",
         message: "",
-        privacy: false,
+        privacyAccepted: false,
+        sourceUrl: this.formData.sourceUrl,
+        referrer: this.formData.referrer,
+        metadata: this.formData.metadata
       };
-      
-      // No reseteamos formSubmitted aquí para mantener el mensaje visible
-      // Se resetea después de 5 segundos
-      setTimeout(() => {
-        this.formSubmitted = false;
-      }, 5000);
     },
     closeModal() {
-      // Manera alternativa para cerrar el modal sin depender de bootstrap directamente
       const modalElement = document.getElementById('privacyModal');
       if (modalElement) {
-        // Eliminar la clase 'show' y el fondo modal
         document.body.classList.remove('modal-open');
         modalElement.classList.remove('show');
         modalElement.setAttribute('aria-hidden', 'true');
         modalElement.setAttribute('style', 'display: none');
         
-        // Eliminar el backdrop del modal
         const backdrop = document.querySelector('.modal-backdrop');
         if (backdrop) {
           backdrop.remove();

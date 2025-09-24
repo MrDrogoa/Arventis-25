@@ -1,7 +1,7 @@
 // This file will provide placeholder image URLs that can be imported in the components
 export const placeholders = {
-  hero: "logos/horizontal.png",
-  navbar: "logos/transparente.png",
+  hero: "horizontal.png",
+  navbar: "transparente.png",
   about: "https://via.placeholder.com/600x400?text=About+Company",
   team1: "https://via.placeholder.com/300x300?text=Team+Member+1",
   team2: "https://via.placeholder.com/300x300?text=Team+Member+2",

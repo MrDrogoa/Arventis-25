@@ -3,21 +3,21 @@
 <!-- Accesible, con rol y aria-label si es necesario -->
 
 <template>
-  <div class="card h-100 service-card" role="article" :aria-label="title + ' service'">
-    <div class="card-body text-center">
-      <div class="service-icon mb-3">
-        <i :class="['bi', icon]"></i>
+  <div class="card service-card h-100 border-0 shadow-sm">
+    <div class="card-body p-4 text-center">
+      <div class="service-icon bg-primary mb-3 mx-auto">
+        <i :class="`bi ${icon}`"></i>
       </div>
       <h3 class="card-title h5">{{ title }}</h3>
       <p class="card-text">{{ description }}</p>
-      <router-link 
-        v-if="linkTo" 
-        :to="linkTo" 
-        class="btn btn-outline-primary" 
-        :aria-label="'Más información sobre ' + title"
-      >
-        {{ linkText || 'Más información' }}
-      </router-link>
+      <div class="mt-auto">
+        <router-link :to="{ path: '/contact', query: { subject: `Consulta sobre ${title}` }}" class="btn btn-sm btn-outline-primary">
+          Solicitar Información
+        </router-link>
+        <router-link :to="forumLink" class="btn btn-sm btn-link text-decoration-none">
+          FAQ's <i class="bi bi-arrow-right"></i>
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -28,28 +28,23 @@ export default {
   props: {
     icon: {
       type: String,
-      required: true,
-      description: 'Bootstrap icon class name (bi-*)'
+      required: true
     },
     title: {
       type: String,
-      required: true,
-      description: 'Title of the service'
+      required: true
     },
     description: {
       type: String,
-      required: true,
-      description: 'Description of the service'
+      required: true
     },
     linkTo: {
-      type: [String, Object],
-      default: '',
-      description: 'Router link destination (optional)'
-    },
-    linkText: {
       type: String,
-      default: 'Más información',
-      description: 'Text for the link button (optional)'
+      default: '#'
+    },
+    forumLink: {
+      type: String,
+      default: '/faq'
     }
   }
 };
@@ -58,13 +53,11 @@ export default {
 <style scoped>
 .service-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: none;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .service-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
 }
 
 .service-icon {
@@ -74,12 +67,54 @@ export default {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: #0d6efd;
   color: white;
+  font-size: 1.5rem;
+  background-color: #0d6efd;
   margin: 0 auto;
 }
 
 .service-icon i {
+  font-size: 2rem;
+}
+
+.service-card .card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.service-card .card-text {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+.service-card .btn {
+  margin-top: 10px;
+}
+
+@media (max-width: 576px) {
+  .service-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .service-icon i {
+    font-size: 1.5rem;
+  }
+
+  .service-card .card-title {
+    font-size: 1.125rem;
+  }
+}
+
+.rest-mode .service-card {
+  background-color: var(--card-bg);
+}
+
+.rest-mode .service-icon {
+  background-color: var(--primary-bg);
+}
+
+.rest-mode .service-icon i {
   font-size: 1.5rem;
 }
 </style>

@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 
 const routes = [
   {
@@ -6,8 +6,8 @@ const routes = [
     name: "Home",
     component: () => import("../views/HomeView.vue"),
     meta: {
-      title: "Inicio | Arventis",
-      description: "Soluciones tecnológicas innovadoras y servicios personalizados para impulsar el crecimiento de su negocio.",
+      title: "Inicio | Arventis Digital Solutions",
+      description: "Soluciones tecnológicas innovadoras: Plataformas educativas (Moodle), Automatización de procesos, Desarrollo web, Ciberseguridad, Marketing digital, Capacitaciones certificadas y Soporte continuo.",
     },
   },
   {
@@ -15,8 +15,8 @@ const routes = [
     name: "Services",
     component: () => import("../views/ServicesView.vue"),
     meta: {
-      title: "Servicios | Arventis",
-      description: "Nuestros servicios de desarrollo, consultoría y soporte técnico para empresas. Soluciones a medida para cada necesidad.",
+      title: "Servicios | Arventis Digital Solutions",
+      description: "Nuestros servicios especializados: Plataformas educativas con Moodle, Automatización de procesos administrativos, Desarrollo web y sistemas a medida, Ciberseguridad, Marketing digital con analítica, Capacitaciones certificadas y Soporte postventa.",
     },
   },
   {
@@ -24,7 +24,7 @@ const routes = [
     name: "About",
     component: () => import("../views/AboutView.vue"),
     meta: {
-      title: "Sobre Nosotros | Arventis",
+      title: "Sobre Nosotros | Arventis Digital Solutions",
       description: "Conozca nuestro equipo profesional, historia y valores. Comprometidos con la excelencia e innovación tecnológica desde Ovalle, Chile.",
     },
   },
@@ -33,8 +33,8 @@ const routes = [
     name: "Contact",
     component: () => import("../views/ContactView.vue"),
     meta: {
-      title: "Contacto | Arventis",
-      description: "Póngase en contacto con nuestro equipo. Estamos aquí para ayudarle con sus proyectos y consultas.",
+      title: "Contacto | Arventis Digital Solutions",
+      description: "Póngase en contacto con nuestro equipo. Estamos aquí para ayudarle con sus proyectos y consultas sobre plataformas Moodle, desarrollo web, ciberseguridad y más.",
     },
   },
   {
@@ -42,8 +42,27 @@ const routes = [
     name: "Privacy",
     component: () => import("../views/PrivacyView.vue"),
     meta: {
-      title: "Política de Privacidad | Arventis",
-      description: "Información sobre cómo Arventis recopila, utiliza y protege sus datos personales.",
+      title: "Política de Privacidad | Arventis Digital Solutions",
+      description: "Información sobre cómo Arventis Digital Solutions recopila, utiliza y protege sus datos personales.",
+    },
+  },
+  {
+    path: "/faq",
+    name: "FAQs",
+    component: () => import("../views/FAQsView.vue"),
+    meta: {
+      title: "Preguntas Frecuentes | Arventis Digital Solutions",
+      description: "Consulte nuestras preguntas frecuentes sobre plataformas educativas, automatización, desarrollo web, ciberseguridad, marketing digital, capacitaciones certificadas y soporte.",
+    },
+  },
+  {
+    path: "/faq/:category",
+    name: "CategoryFAQs",
+    component: () => import("../views/FAQsView.vue"),
+    props: true,
+    meta: {
+      title: "Foro de Servicio | Arventis Digital Solutions",
+      description: "Información detallada y preguntas frecuentes sobre nuestros servicios especializados en tecnología educativa, desarrollo web y seguridad informática.",
     },
   },
   {
@@ -51,14 +70,15 @@ const routes = [
     name: "NotFound",
     component: () => import("../views/NotFoundView.vue"),
     meta: {
-      title: "Página no encontrada | Arventis",
+      title: "Página no encontrada | Arventis Digital Solutions",
       description: "Lo sentimos, la página que busca no existe.",
     },
   },
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  // Cambiar de history a hash mode
+  history: createWebHashHistory(process.env.BASE_URL),
   routes,
   // Scroll to top on navigation
   scrollBehavior() {
@@ -69,7 +89,7 @@ const router = createRouter({
 // afterEach hook for updating document title and meta description
 router.afterEach((to) => {
   // Update document title
-  document.title = to.meta.title || "Arventis";
+  document.title = to.meta.title || "Arventis Digital Solutions";
 
   // Update meta description
   let metaDescription = document.querySelector('meta[name="description"]');

@@ -111,6 +111,18 @@
   background: linear-gradient(135deg, var(--primary-bg) 0%, #4a7384 100%);
 }
 
+/* Estilos específicos para call-to-action en modo descanso */
+.rest-mode .call-to-action {
+  background: linear-gradient(135deg, var(--primary-bg) 0%, #4a7384 100%) !important;
+  color: var(--secondary-bg) !important;
+}
+
+.rest-mode .call-to-action .btn-light {
+  background-color: var(--secondary-bg);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
 /* Footer */
 .rest-mode footer.bg-dark {
   background-color: #444 !important;

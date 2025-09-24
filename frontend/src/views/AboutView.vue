@@ -154,8 +154,8 @@ export default {
           bio: "Lidera la gestión estratégica, administrativa y comercial de la empresa, aportando visión organizacional y enfoque en procesos eficientes y sostenibles.",
           image: "img/valentina.png",
           social: [
-            { name: "LinkedIn", icon: "bi-linkedin", url: "#" },
-            { name: "Twitter", icon: "bi-twitter", url: "#" }
+            { name: "LinkedIn", icon: "bi-linkedin", url: "https://www.linkedin.com/in/valentina-argandona-ugarte/" },
+            { name: "Email", icon: "bi-envelope", url: "mailto:contacto@arventis.cl" }
           ]
         },
         {
@@ -164,8 +164,10 @@ export default {
           bio: "Integra su experiencia en educación y tecnología para diseñar interfaces centradas en el usuario, desarrollar soluciones web accesibles y liderar proyectos de innovación educativa.",
           image: "img/marcos.png",
           social: [
-            { name: "LinkedIn", icon: "bi-linkedin", url: "#" },
-            { name: "GitHub", icon: "bi-github", url: "#" }
+            { name: "LinkedIn", icon: "bi-linkedin", url: "https://www.linkedin.com/in/marcos-argando%C3%B1a-ugarte-09731a37/" },
+            { name: "GitHub", icon: "bi-github", url: "https://github.com/margandona" },
+            { name: "Email", icon: "bi-envelope", url: "mailto:ti@arventis.cl" },
+            { name: "Website", icon: "bi-globe", url: "https://www.makuaz.cl" }
           ]
         },
         {
@@ -174,8 +176,8 @@ export default {
           bio: "Se especializa en desarrollo backend, automatización de sistemas, integraciones con plataformas como Moodle y soluciones TI adaptadas a empresas e instituciones públicas.",
           image: "img/jesus.png",
           social: [
-            { name: "LinkedIn", icon: "bi-linkedin", url: "#" },
-            { name: "GitHub", icon: "bi-github", url: "#" }
+            { name: "LinkedIn", icon: "bi-linkedin", url: "https://www.linkedin.com/in/jesus-ignacio-cornejo-gonzalez-78807b139/" },
+            { name: "Email", icon: "bi-envelope", url: "mailto:soporte@arventis.cl" }
           ]
         },
         {
@@ -184,9 +186,7 @@ export default {
           bio: "Experta en estrategias de marketing digital, experiencia de usuario y análisis de datos. Lidera la optimización de la presencia online y las campañas de comunicación digital para nuestros clientes.",
           image: "img/carolina.png",
           social: [
-            { name: "LinkedIn", icon: "bi-linkedin", url: "#" },
-            { name: "Instagram", icon: "bi-instagram", url: "#" },
-            { name: "Twitter", icon: "bi-twitter", url: "#" }
+            { name: "Email", icon: "bi-envelope", url: "mailto:contacto@arventis.cl" }
           ]
         }
       ],

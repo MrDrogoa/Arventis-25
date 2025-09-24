@@ -6,7 +6,9 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "format": "prettier --write \"src/**/*.{js,vue,json,html,css}\""
+    "format": "prettier --write \"src/**/*.{js,vue,json,html,css}\"",
+    "clean": "node clean-dist.js",
+    "build:clean": "npm run clean && npm run build"
   },
   "dependencies": {
     "bootstrap": "^5.3.6",
@@ -25,7 +27,8 @@
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
-    "prettier": "^2.8.0"
+    "prettier": "^2.8.0",
+    "rimraf": "^6.0.1"
   },
   "eslintConfig": {
     "root": true,

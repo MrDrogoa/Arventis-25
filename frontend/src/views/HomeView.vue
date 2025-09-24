@@ -29,7 +29,7 @@
           <div class="col-lg-6 mt-5 mt-lg-0">
             <transition name="slide-left" appear>
               <img
-                :src="require(`@/assets/img/${placeholders.hero}`)"
+                :src="`/logos/${placeholders.hero}`"
                 alt="Arventis - Soluciones tecnológicas"
                 class="img-fluid rounded shadow hero-image"
               />

@@ -1,16 +1,56 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Descripción general del sitio">
+    
+    <!-- Primary Meta Tags -->
+    <title>Arventis Digital Solutions</title>
+    <meta name="title" content="Arventis Digital Solutions">
+    <meta name="description" content="Servicios tecnológicos: Plataformas educativas (Moodle), Automatización de procesos, Desarrollo web y sistemas a medida, Ciberseguridad, Marketing digital con analítica, Capacitaciones certificadas (SENCE, OS10, CPEIP), Soporte postventa.">
+    <meta name="keywords" content="Moodle, plataformas educativas, automatización, desarrollo web, ciberseguridad, marketing digital, capacitaciones, SENCE, OS10, CPEIP, Ovalle, Chile">
+    <meta name="author" content="Arventis Digital Solutions">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://arventis.cl/">
+    <meta property="og:title" content="Arventis Digital Solutions">
+    <meta property="og:description" content="Servicios tecnológicos: Plataformas educativas (Moodle), Automatización de procesos, Desarrollo web y sistemas a medida, Ciberseguridad, Marketing digital con analítica y más.">
+    <meta property="og:image" content="<%= BASE_URL %>logos/horizontal.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://arventis.cl/">
+    <meta property="twitter:title" content="Arventis Digital Solutions">
+    <meta property="twitter:description" content="Servicios tecnológicos: Plataformas educativas (Moodle), Automatización de procesos, Desarrollo web y sistemas a medida, Ciberseguridad, Marketing digital con analítica y más.">
+    <meta property="twitter:image" content="<%= BASE_URL %>logos/horizontal.png">
+    
+    <!-- Favicon -->
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    
+    <!-- Additional Meta -->
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="geo.region" content="CL-CO">
+    <meta name="geo.placename" content="Ovalle">
+    <meta name="language" content="Spanish">
+    
+    <!-- Add CORS debugging for development environments only -->
+    <% if (process.env.NODE_ENV === 'development') { %>
+    <script>
+      window.addEventListener('error', function(e) {
+        if (e.message && (e.message.includes('CORS') || e.message.includes('cross-origin'))) {
+          console.error('CORS ERROR DETECTED:', e);
+          alert('Posible error CORS detectado. Revise la consola para más detalles.');
+        }
+      });
+    </script>
+    <% } %>
   </head>
   <body>
     <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong>Lo sentimos, pero Arventis Digital Solutions no funciona correctamente sin JavaScript habilitado. Por favor habilítelo para continuar.</strong>
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->

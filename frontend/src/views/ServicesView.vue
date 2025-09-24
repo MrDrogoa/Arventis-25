@@ -38,6 +38,7 @@
               :title="service.title"
               :description="service.description"
               :linkTo="service.linkTo"
+              :forumLink="service.forumLink"
             />
           </div>
         </div>
@@ -79,37 +80,43 @@ export default {
           icon: "bi-code-slash",
           title: "Desarrollo de Software",
           description: "Creamos aplicaciones web y móviles personalizadas utilizando las tecnologías más modernas y eficientes del mercado.",
-          linkTo: "/services/development"
+          linkTo: "/services/development",
+          forumLink: "/faq/software-development"
         },
         {
           icon: "bi-graph-up",
           title: "Consultoría IT",
           description: "Asesoramiento estratégico para optimizar sus procesos tecnológicos y mejorar la eficiencia de su infraestructura.",
-          linkTo: "/services/consulting"
+          linkTo: "/services/consulting",
+          forumLink: "/faq/it-consulting"
         },
         {
           icon: "bi-shield-check",
           title: "Ciberseguridad",
           description: "Protegemos sus activos digitales con soluciones avanzadas de seguridad informática y prevención de amenazas.",
-          linkTo: "/services/security"
+          linkTo: "/services/security",
+          forumLink: "/faq/cybersecurity"
         },
         {
           icon: "bi-bar-chart",
           title: "Análisis de Datos",
           description: "Transforme sus datos en conocimiento accionable con nuestras soluciones de Business Intelligence y análisis predictivo.",
-          linkTo: "/services/data-analysis"
+          linkTo: "/services/data-analysis",
+          forumLink: "/faq/data-analysis"
         },
         {
           icon: "bi-cloud",
           title: "Cloud Computing",
           description: "Migración e implementación de soluciones en la nube para optimizar recursos y aumentar la flexibilidad de su negocio.",
-          linkTo: "/services/cloud"
+          linkTo: "/services/cloud",
+          forumLink: "/faq/cloud-computing"
         },
         {
           icon: "bi-headset",
           title: "Soporte Técnico",
           description: "Servicio de asistencia técnica continua para mantener sus sistemas funcionando de manera óptima en todo momento.",
-          linkTo: "/services/support"
+          linkTo: "/services/support",
+          forumLink: "/faq/technical-support"
         }
       ]
     };
