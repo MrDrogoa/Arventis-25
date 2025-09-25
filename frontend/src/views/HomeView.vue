@@ -1,47 +1,11 @@
 <template>
   <main id="content">
-    <section class="hero-section bg-primary text-white py-5">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <transition name="fade-in" appear>
-              <div>
-                <h1 class="display-4 fw-bold">
-                  Soluciones tecnológicas innovadoras
-                </h1>
-                <p class="lead my-4">
-                  Potenciamos su negocio con tecnología de vanguardia y servicios personalizados
-                  para impulsar su crecimiento en el mundo digital.
-                </p>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                  <router-link
-                    to="/services"
-                    class="btn btn-light btn-lg px-4 me-md-2 fw-bold"
-                  >Descubrir servicios</router-link>
-                  <router-link
-                    to="/contact"
-                    class="btn btn-outline-light btn-lg px-4"
-                  >Contactar</router-link>
-                </div>
-              </div>
-            </transition>
-          </div>
-          <div class="col-lg-6 mt-5 mt-lg-0">
-            <transition name="slide-left" appear>
-              <img
-                :src="`/logos/${placeholders.hero}`"
-                alt="Arventis - Soluciones tecnológicas"
-                class="img-fluid rounded shadow hero-image"
-              />
-            </transition>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- hero section -->
+    <HeroComponents />
 
     <section class="features-section py-5">
       <div class="container">
-        <h2 class="text-center mb-5 display-6">¿Por qué elegir Arventis?</h2>
+        <h2 class="text-center mb-5 fw-semibold display-6">¿Por qué elegir Arventis?</h2>
         <div class="row g-4">
           <div class="col-md-4" v-for="(feature, index) in features" :key="index">
             <transition name="fade-up" :delay="index * 100" appear>
@@ -60,30 +24,22 @@
       </div>
     </section>
 
-    <section class="cta-section py-5 bg-light">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8 text-center">
-            <h2 class="mb-4">¿Listo para transformar su negocio?</h2>
-            <p class="lead mb-4">
-              Contáctenos hoy y descubra cómo nuestras soluciones tecnológicas pueden
-              ayudar a alcanzar sus objetivos.
-            </p>
-            <router-link to="/contact" class="btn btn-primary btn-lg px-5">
-              Solicitar consulta gratuita
-            </router-link>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Call to Action section -->
+    <CallActionComponents />
   </main>
 </template>
 
 <script>
 import { placeholders } from "../assets/placeholders.js";
+import HeroComponents from "../components/HeroComponents.vue";
+import CallActionComponents from "../components/CallActionComponents.vue";
 
 export default {
   name: "HomeView",
+  components: {
+    HeroComponents,
+    CallActionComponents,
+  },
   data() {
     return {
       placeholders,
@@ -91,20 +47,23 @@ export default {
         {
           icon: "bi-gear-fill",
           title: "Experiencia",
-          description: "Más de 10 años desarrollando soluciones tecnológicas de alto impacto para empresas de todos los tamaños."
+          description:
+            "Más de 10 años desarrollando soluciones tecnológicas de alto impacto para empresas de todos los tamaños.",
         },
         {
           icon: "bi-lightning-fill",
           title: "Innovación",
-          description: "Utilizamos las últimas tecnologías para ofrecer soluciones modernas, eficientes y adaptadas a sus necesidades."
+          description:
+            "Utilizamos las últimas tecnologías para ofrecer soluciones modernas, eficientes y adaptadas a sus necesidades.",
         },
         {
           icon: "bi-people-fill",
           title: "Soporte",
-          description: "Acompañamiento continuo y atención personalizada para cada cliente, garantizando resultados óptimos."
-        }
-      ]
+          description:
+            "Acompañamiento continuo y atención personalizada para cada cliente, garantizando resultados óptimos.",
+        },
+      ],
     };
-  }
+  },
 };
 </script>

@@ -4,7 +4,7 @@
 .rest-mode {
   --bg-color: #f0ebe1; /* Fondo beige suave */
   --text-color: #333333; /* Texto oscuro pero no negro puro */
-  --heading-color: #484444; /* Encabezados ligeramente más oscuros */
+  --heading-color: #a29e9e; /* Encabezados ligeramente más oscuros */
   --link-color: #0d548a; /* Enlaces azul oscuro, menos intenso */
   --primary-bg: #5d8ba3; /* Azul apagado en lugar de azul brillante */
   --secondary-bg: #e6e0d4; /* Beige más claro para elementos secundarios */
@@ -22,7 +22,12 @@
 }
 
 /* Encabezados */
-.rest-mode h1, .rest-mode h2, .rest-mode h3, .rest-mode h4, .rest-mode h5, .rest-mode h6 {
+.rest-mode h1,
+.rest-mode h2,
+.rest-mode h3,
+.rest-mode h4,
+.rest-mode h5,
+.rest-mode h6 {
   color: var(--heading-color);
 }
 
@@ -142,20 +147,30 @@
   font-size: 1.6rem;
 }
 
-.text-large h1, .text-xlarge h1, .text-xxlarge h1 {
+.text-large h1,
+.text-xlarge h1,
+.text-xxlarge h1 {
   font-size: 2.5rem;
 }
 
-.text-large h2, .text-xlarge h2, .text-xxlarge h2 {
+.text-large h2,
+.text-xlarge h2,
+.text-xxlarge h2 {
   font-size: 2.2rem;
 }
 
-.text-large .lead, .text-xlarge .lead, .text-xxlarge .lead {
+.text-large .lead,
+.text-xlarge .lead,
+.text-xxlarge .lead {
   font-size: 1.4rem;
 }
 
 /* Resaltar los enlaces y elementos interactivos al enfocarlos */
-a:focus, button:focus, input:focus, select:focus, textarea:focus {
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
   outline: 3px solid #ff8c00 !important; /* Naranja para mayor visibilidad */
   outline-offset: 2px;
 }

@@ -1,3 +1,39 @@
+/* estilos para el navbar-header */
+/* enlaces del navbar */
+.link-navbar {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.link-navbar::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #08b2f7;
+  transition: width 0.3s ease;
+}
+
+.link-navbar:hover {
+  color: #08b2f7 !important;
+}
+
+.link-navbar:active {
+  color: #0691d9 !important;
+}
+
+.link-navbar.active {
+  color: #08b2f7 !important;
+}
+
+.link-navbar:hover::after,
+.link-navbar.active::after {
+  width: 100%;
+}
+
 .header {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

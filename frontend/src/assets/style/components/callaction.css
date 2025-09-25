@@ -1,0 +1,4 @@
+/* color del background */
+.bg-gradient-action {
+  background-color: linear-gradient(135deg, #183772 0%, #173977 100%) !important;
+}
