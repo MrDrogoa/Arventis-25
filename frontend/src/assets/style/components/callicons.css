@@ -1,0 +1,95 @@
+/* Estilos para la sección de proceso de trabajo con iconos */
+
+/* Contenedor del icono circular */
+.step-icon {
+  width: 64px;
+  height: 64px;
+  background-color: #08b2f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(8, 178, 247, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* Líneas conectoras entre pasos */
+.step-connector {
+  position: absolute;
+  top: 40px;
+  left: 100%;
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, #08b2f7 0%, #e9ecef 100%);
+  z-index: 1;
+}
+
+/* Último paso no tiene conector */
+.col-md-3:last-child .step-connector {
+  display: none !important;
+}
+
+/* Efectos hover para el paso completo */
+.process-step {
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-icon:hover {
+  color: #08b2f7;
+  transition: color 0.3s ease;
+}
+
+/* Texto descriptivo con altura fija */
+.process-step p {
+  flex-grow: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .process-step {
+    min-height: 240px;
+  }
+
+  .process-step p {
+    min-height: 60px;
+  }
+
+  .step-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* En móvil, los pasos se organizan en grid 2x2 */
+  .row.justify-content-center {
+    gap: 2rem;
+  }
+}
+
+/* Animación de entrada */
+.process-step {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.process-step:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.process-step:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.process-step:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.process-step:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

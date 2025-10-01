@@ -58,7 +58,7 @@
 }
 
 /* Áreas primarias */
-.rest-mode .bg-primary {
+.rest-mode .step-icon {
   background-color: var(--primary-bg) !important;
   color: var(--secondary-bg);
 }
@@ -81,6 +81,17 @@
   background-color: var(--primary-bg);
   border-color: var(--primary-bg);
   color: #fff;
+}
+
+.rest-mode .btn.link-hero {
+  background-color: var(--primary-bg) !important;
+  border-color: var(--primary-bg) !important;
+  color: #fff !important;
+}
+
+.rest-mode .btn.link-hero:hover {
+  background-color: #4a7384 !important;
+  border-color: #4a7384 !important;
 }
 
 .rest-mode .btn-light {
@@ -184,4 +195,32 @@ textarea:focus {
 
 .rest-mode .improved-legibility {
   text-shadow: 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+/* Modo descanso visual para líneas decorativas */
+.rest-mode .services-section .service-card::before {
+  background-image: radial-gradient(
+      circle at 20% 30%,
+      transparent 70%,
+      rgba(93, 139, 163, 0.05) 71%,
+      rgba(93, 139, 163, 0.05) 72%,
+      transparent 73%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      transparent 60%,
+      rgba(93, 139, 163, 0.03) 61%,
+      rgba(93, 139, 163, 0.03) 62%,
+      transparent 63%
+    );
+}
+
+/* Modo descanso visual para cards */
+.rest-mode .service-card {
+  background-color: var(--card-bg);
+}
+/* Modo descanso visual para cards */
+
+.rest-mode .service-icon {
+  background-color: var(--primary-bg);
 }

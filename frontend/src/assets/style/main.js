@@ -5,6 +5,11 @@ import "./components/header.css";
 import "./components/footer.css";
 import "./components/service-card.css";
 import "./components/callaction.css";
+import "./components/computer.css";
+import "./components/callicons.css";
+import "./components/heroservice.css";
+import "./components/hser.css";
+import "./components/seraccion.css";
 
 // Importar estilos de vistas
 import "./views/home.css";

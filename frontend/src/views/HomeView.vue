@@ -5,13 +5,15 @@
 
     <section class="features-section py-5">
       <div class="container">
-        <h2 class="text-center mb-5 fw-semibold display-6">¿Por qué elegir Arventis?</h2>
+        <h2 class="mb-5 fw-bold display-6 font-family text-center reveal-left">
+          ¿Por qué elegir <span class="text-primary">Arventis</span>?
+        </h2>
         <div class="row g-4">
           <div class="col-md-4" v-for="(feature, index) in features" :key="index">
             <transition name="fade-up" :delay="index * 100" appear>
               <div class="card h-100 border-0 shadow-sm feature-card">
-                <div class="card-body text-center p-4">
-                  <div class="feature-icon bg-primary bg-gradient text-white rounded-circle mb-3">
+                <div class="card-body p-4">
+                  <div class="feature-icon step-icon bg-gradient text-white rounded-4 mb-3">
                     <i :class="`bi ${feature.icon}`"></i>
                   </div>
                   <h3 class="card-title h5">{{ feature.title }}</h3>
@@ -23,6 +25,11 @@
         </div>
       </div>
     </section>
+    <!-- Computer section -->
+    <ComputerComponents />
+
+    <!-- Call action icon -->
+    <CalliconsComponents />
 
     <!-- Call to Action section -->
     <CallActionComponents />
@@ -33,12 +40,24 @@
 import { placeholders } from "../assets/placeholders.js";
 import HeroComponents from "../components/HeroComponents.vue";
 import CallActionComponents from "../components/CallActionComponents.vue";
+import ComputerComponents from "../components/ComputerComponents.vue";
+import CalliconsComponents from "../components/CalliconsComponents.vue";
+import { useScrollReveal } from "@/composables/useScrollReveal.js";
 
 export default {
   name: "HomeView",
+  setup() {
+    // animacion de libreria scrollreveal
+    const { setupScrollReveal } = useScrollReveal();
+    setupScrollReveal();
+
+    return {};
+  },
   components: {
     HeroComponents,
     CallActionComponents,
+    ComputerComponents,
+    CalliconsComponents,
   },
   data() {
     return {

@@ -9,31 +9,29 @@
 
 <template>
   <main id="content">
-    <section class="page-header bg-light py-5">
-      <div class="container">
-        <h1 class="display-4 fw-bold">Nuestros Servicios</h1>
-        <p class="lead">
-          Ofrecemos soluciones tecnológicas completas y personalizadas para impulsar su 
-          negocio hacia el futuro digital. Explore nuestros servicios especializados.
-        </p>
-      </div>
-    </section>
+    <!-- Sección de héroe con animaciones de fondo -->
+    <HeroServiceComponents />
+
+    <!-- Sección de servicios -->
+    <HeroSerComponents />
 
     <section class="services-section py-5">
       <div class="container">
         <div class="row mb-5">
           <div class="col-lg-8 mx-auto text-center">
-            <h2 class="mb-3">Soluciones integrales para su empresa</h2>
-            <p class="lead text-muted">
-              En Arventis combinamos experiencia y tecnología avanzada para ofrecer servicios 
-              que resuelven problemas reales y generan valor para su negocio.
+            <h2 class="mb-3 fw-bold display-6">
+              <span class="text-primary">Soluciones</span> integrales
+            </h2>
+            <p class="mb-4 fw-medium card-text w-75 mx-auto">
+              En Arventis combinamos experiencia y tecnología avanzada para ofrecer servicios que
+              resuelven problemas reales y generan valor para su negocio.
             </p>
           </div>
         </div>
 
         <div class="row g-4">
           <div class="col-md-6 col-lg-4" v-for="(service, index) in services" :key="index">
-            <ServiceCard 
+            <ServiceCard
               :icon="service.icon"
               :title="service.title"
               :description="service.description"
@@ -45,33 +43,23 @@
       </div>
     </section>
 
-    <section class="call-to-action bg-primary text-white py-5">
-      <div class="container">
-        <div class="row justify-content-between align-items-center">
-          <div class="col-lg-8">
-            <h3 class="mb-3">¿Necesita una solución personalizada?</h3>
-            <p class="mb-lg-0">
-              Contáctenos hoy para discutir su proyecto y recibir una consulta sin compromiso.
-            </p>
-          </div>
-          <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
-            <router-link to="/contact" class="btn btn-light btn-lg">
-              Solicitar información
-            </router-link>
-          </div>
-        </div>
-      </div>
-    </section>
+    <SerAcComponents />
   </main>
 </template>
 
 <script>
 import ServiceCard from "@/components/ServiceCard.vue";
+import HeroServiceComponents from "@/components/HeroServiceComponents.vue";
+import HeroSerComponents from "@/components/HeroSerComponents.vue";
+import SerAcComponents from "@/components/SerAcComponents.vue";
 
 export default {
   name: "ServicesView",
   components: {
-    ServiceCard
+    ServiceCard,
+    HeroServiceComponents,
+    HeroSerComponents,
+    SerAcComponents,
   },
   data() {
     return {
@@ -79,48 +67,53 @@ export default {
         {
           icon: "bi-code-slash",
           title: "Desarrollo de Software",
-          description: "Creamos aplicaciones web y móviles personalizadas utilizando las tecnologías más modernas y eficientes del mercado.",
+          description:
+            "Creamos aplicaciones web y móviles personalizadas utilizando las tecnologías más modernas y eficientes del mercado.",
           linkTo: "/services/development",
-          forumLink: "/faq/software-development"
+          forumLink: "/faq/software-development",
         },
         {
           icon: "bi-graph-up",
           title: "Consultoría IT",
-          description: "Asesoramiento estratégico para optimizar sus procesos tecnológicos y mejorar la eficiencia de su infraestructura.",
+          description:
+            "Asesoramiento estratégico para optimizar sus procesos tecnológicos y mejorar la eficiencia de su infraestructura.",
           linkTo: "/services/consulting",
-          forumLink: "/faq/it-consulting"
+          forumLink: "/faq/it-consulting",
         },
         {
           icon: "bi-shield-check",
           title: "Ciberseguridad",
-          description: "Protegemos sus activos digitales con soluciones avanzadas de seguridad informática y prevención de amenazas.",
+          description:
+            "Protegemos sus activos digitales con soluciones avanzadas de seguridad informática y prevención de amenazas.",
           linkTo: "/services/security",
-          forumLink: "/faq/cybersecurity"
+          forumLink: "/faq/cybersecurity",
         },
         {
           icon: "bi-bar-chart",
           title: "Análisis de Datos",
-          description: "Transforme sus datos en conocimiento accionable con nuestras soluciones de Business Intelligence y análisis predictivo.",
+          description:
+            "Transforme sus datos en conocimiento accionable con nuestras soluciones de Business Intelligence y análisis predictivo.",
           linkTo: "/services/data-analysis",
-          forumLink: "/faq/data-analysis"
+          forumLink: "/faq/data-analysis",
         },
         {
           icon: "bi-cloud",
           title: "Cloud Computing",
-          description: "Migración e implementación de soluciones en la nube para optimizar recursos y aumentar la flexibilidad de su negocio.",
+          description:
+            "Migración e implementación de soluciones en la nube para optimizar recursos y aumentar la flexibilidad de su negocio.",
           linkTo: "/services/cloud",
-          forumLink: "/faq/cloud-computing"
+          forumLink: "/faq/cloud-computing",
         },
         {
           icon: "bi-headset",
           title: "Soporte Técnico",
-          description: "Servicio de asistencia técnica continua para mantener sus sistemas funcionando de manera óptima en todo momento.",
+          description:
+            "Servicio de asistencia técnica continua para mantener sus sistemas funcionando de manera óptima en todo momento.",
           linkTo: "/services/support",
-          forumLink: "/faq/technical-support"
-        }
-      ]
+          forumLink: "/faq/technical-support",
+        },
+      ],
     };
-  }
+  },
 };
 </script>
-

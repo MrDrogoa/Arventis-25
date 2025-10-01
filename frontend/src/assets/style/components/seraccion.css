@@ -1,0 +1,197 @@
+/* CTA Overlay Section */
+.cta-overlay-section {
+  z-index: 10;
+}
+
+.cta-overlay-box {
+  background: linear-gradient(135deg, #183772 0%, #173977 100%);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  margin: 0 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .cta-overlay-box {
+    margin: 0 2rem;
+    padding: 4rem 3rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .cta-overlay-box {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 4rem 4rem;
+  }
+}
+
+/* Puntos decorativos */
+.dots-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+}
+
+/* Posicionamiento de puntos */
+.dot-1 {
+  top: 10%;
+  left: 5%;
+}
+.dot-2 {
+  top: 15%;
+  left: 15%;
+}
+.dot-3 {
+  top: 20%;
+  left: 8%;
+}
+.dot-4 {
+  top: 25%;
+  left: 25%;
+}
+.dot-5 {
+  top: 30%;
+  left: 12%;
+}
+.dot-6 {
+  top: 35%;
+  left: 35%;
+}
+.dot-7 {
+  top: 40%;
+  left: 5%;
+}
+.dot-8 {
+  top: 45%;
+  left: 20%;
+}
+.dot-9 {
+  top: 50%;
+  left: 30%;
+}
+.dot-10 {
+  top: 55%;
+  left: 10%;
+}
+.dot-11 {
+  top: 10%;
+  right: 10%;
+}
+.dot-12 {
+  top: 20%;
+  right: 25%;
+}
+.dot-13 {
+  top: 30%;
+  right: 15%;
+}
+.dot-14 {
+  top: 40%;
+  right: 35%;
+}
+.dot-15 {
+  top: 50%;
+  right: 8%;
+}
+.dot-16 {
+  top: 60%;
+  right: 20%;
+}
+.dot-17 {
+  top: 70%;
+  right: 30%;
+}
+.dot-18 {
+  top: 80%;
+  left: 18%;
+}
+.dot-19 {
+  top: 85%;
+  left: 28%;
+}
+.dot-20 {
+  top: 75%;
+  right: 12%;
+}
+
+/* Puntos más grandes en algunas posiciones */
+.dot-4,
+.dot-9,
+.dot-14,
+.dot-19 {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Puntos medianos */
+.dot-2,
+.dot-7,
+.dot-12,
+.dot-17 {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.18);
+}
+
+/* Asegurar que el contenido esté por encima */
+.cta-overlay-box .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Estilos para el botón */
+.cta-overlay-box .btn-light {
+  border: none;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.cta-overlay-box .btn-light:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive para dispositivos móviles */
+@media (max-width: 767px) {
+  .cta-overlay-box {
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .dot-4,
+  .dot-9,
+  .dot-14,
+  .dot-19 {
+    width: 9px;
+    height: 9px;
+  }
+
+  .dot-2,
+  .dot-7,
+  .dot-12,
+  .dot-17 {
+    width: 7px;
+    height: 7px;
+  }
+}

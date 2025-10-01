@@ -1,9 +1,10 @@
-.footer {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
 .bi {
   margin-right: 8px;
+}
+/* line footer */
+.line-footer {
+  background-color: #fff;
+  opacity: 100 !important;
 }
 
 .social-icons .bi {
