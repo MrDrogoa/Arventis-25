@@ -6,7 +6,10 @@
     <div class="container">
       <div class="row reveal-bottom-1">
         <div class="col-md-4 mb-3 mb-md-0">
-          <h5 class="text-uppercase mb-3">Arventis</h5>
+          <!-- Logo-footer -->
+          <router-link to="/" class="d-block mb-3">
+            <img :src="imgFooter" alt="Logo de Arventis" class="img-fluid w-50" />
+          </router-link>
           <p class="text-white">Soluciones tecnológicas innovadoras para empresas modernas.</p>
         </div>
         <div class="col-md-4 mb-3 mb-md-0">
@@ -20,13 +23,18 @@
         <div class="col-md-4">
           <h5 class="text-uppercase mb-3">Redes Sociales</h5>
           <div class="social-icons">
-            <a href="#" class="text-light me-3" aria-label="TikTok" title="En construcción">
+            <a
+              href="#"
+              class="text-light me-3 icon-footer"
+              aria-label="TikTok"
+              title="En construcción"
+            >
               <i class="bi bi-tiktok"></i>
             </a>
             <a
               href="https://www.linkedin.com/company/arventis-digital-solutions/"
               target="_blank"
-              class="text-light me-3"
+              class="text-light me-3 icon-footer"
               aria-label="LinkedIn"
             >
               <i class="bi bi-linkedin"></i>
@@ -34,17 +42,22 @@
             <a
               href="https://www.youtube.com/@NeekWorldAcademy"
               target="_blank"
-              class="text-light me-3"
+              class="text-light me-3 icon-footer"
               aria-label="YouTube"
             >
               <i class="bi bi-youtube"></i>
             </a>
-            <a href="#" class="text-light me-3" aria-label="Instagram" title="En construcción">
+            <a
+              href="#"
+              class="text-light me-3 icon-footer"
+              aria-label="Instagram"
+              title="En construcción"
+            >
               <i class="bi bi-instagram"></i>
             </a>
-            <a href="mailto:contacto@arventis.cl" class="text-light" aria-label="Email">
+            <!-- <a href="mailto:contacto@arventis.cl" class="text-light icon-footer" aria-label="Email">
               <i class="bi bi-envelope"></i>
-            </a>
+            </a> -->
           </div>
         </div>
       </div>
@@ -62,6 +75,8 @@
 
 <script>
 import { useScrollReveal } from "@/composables/useScrollReveal.js";
+// logo footer
+import imgFooter from "@/assets/img/logos/vertical.webp";
 
 // animacion de libreria scrollreveal
 const { setupScrollReveal } = useScrollReveal();
@@ -73,19 +88,12 @@ export default {
       return new Date().getFullYear();
     },
   },
+  data() {
+    return {
+      imgFooter,
+    };
+  },
 };
 </script>
 
-<style scoped>
-.footer {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.bi {
-  margin-right: 8px;
-}
-
-.social-icons .bi {
-  font-size: 1.5rem;
-}
-</style>
+<style scoped></style>

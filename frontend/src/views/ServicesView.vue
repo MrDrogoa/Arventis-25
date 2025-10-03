@@ -112,6 +112,30 @@ export default {
           linkTo: "/services/support",
           forumLink: "/faq/technical-support",
         },
+        {
+          icon: "bi-robot",
+          title: "Inteligencia Artificial",
+          description:
+            "Implementamos soluciones de IA y machine learning para automatizar procesos y mejorar la toma de decisiones en su empresa.",
+          linkTo: "/services/artificial-intelligence",
+          forumLink: "/faq/artificial-intelligence",
+        },
+        {
+          icon: "bi-megaphone",
+          title: "Marketing Digital",
+          description:
+            "Estrategias digitales personalizadas para aumentar su presencia online, generar leads y convertir visitantes en clientes.",
+          linkTo: "/services/digital-marketing",
+          forumLink: "/faq/digital-marketing",
+        },
+        {
+          icon: "bi-search",
+          title: "SEO y Posicionamiento",
+          description:
+            "Optimización para motores de búsqueda que mejora la visibilidad de su sitio web y atrae tráfico orgánico de calidad.",
+          linkTo: "/services/seo",
+          forumLink: "/faq/seo-positioning",
+        },
       ],
     };
   },

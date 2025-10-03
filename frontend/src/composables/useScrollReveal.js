@@ -13,6 +13,16 @@ export function useScrollReveal() {
       reset: false,
     });
 
+    // Animaciones desde arriba
+    ScrollReveal().reveal(".reveal-top-1", {
+      origin: "top",
+      distance: "60px",
+      duration: 800,
+      delay: 200,
+      easing: "ease-in-out",
+      reset: false,
+    });
+
     // Animaciones desde abajo
     ScrollReveal().reveal(".reveal-bottom", {
       origin: "bottom",
@@ -96,8 +106,8 @@ export function useScrollReveal() {
     // Animaciones con fade
     ScrollReveal().reveal(".reveal-fade", {
       distance: "0px",
-      duration: 1000,
-      delay: 200,
+      duration: 700,
+      delay: 100,
       opacity: 0,
       easing: "ease-in-out",
       reset: false,

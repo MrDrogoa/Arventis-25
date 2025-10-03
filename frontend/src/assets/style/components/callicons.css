@@ -1,5 +1,78 @@
 /* Estilos para la sección de proceso de trabajo con iconos */
 
+/* Grid con flexbox para espaciado uniforme automático */
+.row.justify-content-center {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.col-lg-2-4 {
+  flex: 1;
+  min-width: 280px;
+  max-width: 320px;
+  padding: 0;
+  margin: 0;
+}
+
+.col-lg-2-4:nth-child(4) {
+  flex-basis: 100%;
+  flex: 0 1 280px;
+  margin-right: 0.5rem;
+}
+
+.col-lg-2-4:nth-child(5) {
+  flex: 0 1 280px;
+  margin-left: 0.5rem;
+}
+
+/* En tablets usar flexbox más simple */
+@media (max-width: 991px) {
+  .row.justify-content-center {
+    gap: 1.5rem;
+  }
+
+  .col-lg-2-4 {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+  }
+
+  .col-lg-2-4:nth-child(3) {
+    margin-right: 0;
+  }
+
+  .col-lg-2-4:nth-child(4) {
+    flex-basis: auto;
+    margin-right: 0;
+  }
+
+  .col-lg-2-4:nth-child(5) {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .row.justify-content-center {
+    gap: 2rem;
+  }
+
+  .col-lg-2-4 {
+    flex: 1 1 45%;
+    min-width: 200px;
+    max-width: none;
+    margin-bottom: 0 !important;
+  }
+
+  .col-lg-2-4:nth-child(3),
+  .col-lg-2-4:nth-child(4),
+  .col-lg-2-4:nth-child(5) {
+    margin: 0;
+  }
+}
+
 /* Contenedor del icono circular */
 .step-icon {
   width: 64px;
@@ -17,13 +90,39 @@
   position: absolute;
   top: 40px;
   left: 100%;
-  width: 100px;
+  width: 80px;
   height: 2px;
   background: linear-gradient(90deg, #08b2f7 0%, #e9ecef 100%);
   z-index: 1;
 }
 
-/* Último paso no tiene conector */
+@media (min-width: 992px) {
+  .step-connector {
+    width: 60px;
+  }
+
+  /* Solo mostrar conectores entre las primeras 2 tarjetas y entre las 2 de abajo */
+  .col-lg-2-4:nth-child(3) .step-connector,
+  .col-lg-2-4:nth-child(5) .step-connector {
+    display: none !important;
+  }
+
+  /* Mostrar conector entre la 4ta y 5ta tarjeta */
+  .col-lg-2-4:nth-child(4) .step-connector {
+    display: block !important;
+  }
+}
+
+@media (max-width: 991px) {
+  /* En tablets, ocultar conectores después de la segunda tarjeta de cada fila */
+  .col-lg-2-4:nth-child(3) .step-connector,
+  .col-lg-2-4:nth-child(5) .step-connector {
+    display: none !important;
+  }
+}
+
+/* Últimos pasos no tienen conector */
+.col-lg-2-4:last-child .step-connector,
 .col-md-3:last-child .step-connector {
   display: none !important;
 }
@@ -35,6 +134,8 @@
   flex-direction: column;
   align-items: center;
 }
+
+/* Flexbox maneja el espaciado automáticamente */
 
 .title-icon:hover {
   color: #08b2f7;
@@ -48,22 +149,9 @@
 
 /* Responsive adjustments */
 @media (max-width: 767px) {
-  .process-step {
-    min-height: 240px;
-  }
-
-  .process-step p {
-    min-height: 60px;
-  }
-
   .step-icon {
     width: 60px;
     height: 60px;
-  }
-
-  /* En móvil, los pasos se organizan en grid 2x2 */
-  .row.justify-content-center {
-    gap: 2rem;
   }
 }
 
@@ -85,6 +173,9 @@
 }
 .process-step:nth-child(4) {
   animation-delay: 0.4s;
+}
+.process-step:nth-child(5) {
+  animation-delay: 0.5s;
 }
 
 @keyframes fadeInUp {

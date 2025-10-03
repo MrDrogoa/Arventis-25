@@ -1,5 +1,6 @@
 <script setup>
-import Ser from "@/assets/img/service.webp";
+// import aqui la imagen
+import Ser from "@/assets/img/service.jpg";
 </script>
 
 <template>
@@ -32,7 +33,7 @@ import Ser from "@/assets/img/service.webp";
         </div>
         <!-- Contenido de texto -->
         <div class="col-lg-6 mb-5 mb-lg-0">
-          <div>
+          <div class="px-0 px-lg-3 text-center text-lg-start">
             <h2 class="mb-3 fw-bold display-6">Nuestra Agencia</h2>
             <p class="fs-5 mb-4 pe-lg-4">
               En Arventis desarrollamos soluciones tecnológicas innovadoras que transforman la
@@ -45,7 +46,7 @@ import Ser from "@/assets/img/service.webp";
             </p>
             <router-link
               to="/about"
-              class="btn link-hero text-white btn-lg px-4 me-md-2 fw-semibold text-decoration-none"
+              class="btn link-hero text-white btn-lg px-4 me-md-2 fw-semibold text-decoration-none reveal-right-2"
             >
               Conocer más
             </router-link>

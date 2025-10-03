@@ -6,7 +6,12 @@
   background-color: #fff;
   opacity: 100 !important;
 }
-
+/* iconos footer */
 .social-icons .bi {
   font-size: 1.5rem;
+}
+
+.icon-footer:hover {
+  color: #00bfa6 !important; /* Cambia el color al pasar el cursor */
+  transition: color 0.3s ease; /* Suaviza la transición del color */
 }

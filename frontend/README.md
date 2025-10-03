@@ -2,7 +2,69 @@
 
 Proyecto frontend para Arventis - Soluciones tecnológicas innovadoras.
 
-## 🚀 Últimas actualizaciones (30 Sep 2025)
+## 🚀 Últimas actualizaciones (3 Oct 2025)
+
+### 🔄 Refactorización CalliconsComponents - Layout Flexbox Moderno
+- **Migración a Flexbox**: Reemplazo completo del sistema de grid con porcentajes por flexbox nativo
+- **Espaciado automático**: Implementación de `gap` para distribución uniforme sin cálculos manuales
+- **Layout 3+2 optimizado**: 3 tarjetas superiores + 2 inferiores centradas automáticamente
+- **Responsive mejorado**: Distribución adaptativa sin breakpoints complicados
+
+#### **Mejoras técnicas en CalliconsComponents.vue**
+- **Sistema dinámico**: Array `processSteps` para gestión de contenido
+- **Nueva tarjeta agregada**: "Testing y Optimización" con ícono `bi-gear`
+- **Conectores inteligentes**: Líneas entre tarjetas 1→2→3 y 4→5
+- **Código más limpio**: Eliminación de cálculos de porcentajes y márgenes manuales
+
+#### **CSS Flexbox implementado en callicons.css**
+```css
+.row.justify-content-center {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.col-lg-2-4 {
+  flex: 1;
+  min-width: 280px;
+  max-width: 320px;
+}
+```
+
+### 🎯 Expansión de servicios en ServicesView
+- **Nuevos servicios agregados**: 3 tarjetas adicionales para un total de 9 servicios
+- **Inteligencia Artificial**: Soluciones de IA y machine learning (`bi-robot`)
+- **Marketing Digital**: Estrategias digitales y generación de leads (`bi-megaphone`)
+- **SEO y Posicionamiento**: Optimización para motores de búsqueda (`bi-search`)
+
+#### **Sistema dinámico mejorado**
+- **Grid responsivo**: Bootstrap `col-md-6 col-lg-4` para distribución 3x3
+- **Consistencia**: Mismo formato para todas las tarjetas de servicios
+- **Enlaces funcionales**: Rutas específicas para cada servicio y FAQ
+
+### 🎨 Mejoras de UX/UI
+- **Distribución visual equilibrada**: Layout 3+2 más atractivo que 5 en línea
+- **Espaciado uniforme**: Flexbox garantiza consistencia automática
+- **Animaciones escalables**: Sistema preparado para nuevas tarjetas
+- **Conectores visuales**: Flujo claro del proceso de trabajo
+
+### 📱 Responsive Design Avanzado
+- **Desktop**: 3 tarjetas arriba, 2 abajo centradas
+- **Tablets**: Distribución flexible adaptativa
+- **Móviles**: 2 por fila con espaciado óptimo
+- **Flexbox nativo**: Mejor soporte cross-browser
+
+### 🔧 Refactorización técnica
+- **Eliminación de hacks CSS**: No más `margin-left: 16.666667%`
+- **Código mantenible**: Flexbox más fácil de modificar y escalar
+- **Performance mejorada**: Menos cálculos CSS complejos
+- **Escalabilidad**: Fácil agregar/quitar elementos
+
+---
+
+## 🚀 Actualizaciones anteriores (30 Sep 2025)
 
 ### 🎬 Integración de animaciones ScrollReveal
 - **ScrollReveal 4.0.9**: Instalación y configuración de la librería de animaciones

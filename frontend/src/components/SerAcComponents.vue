@@ -14,7 +14,7 @@
           <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
             <router-link
               to="/contact"
-              class="btn btn-outline-light btn-lg px-4 fw-semibold text-decoration-none"
+              class="btn btn-outline-light btn-lg px-4 fw-semibold text-decoration-none reveal-top-1"
             >
               Solicitar información
             </router-link>

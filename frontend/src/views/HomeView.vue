@@ -10,17 +10,15 @@
         </h2>
         <div class="row g-4">
           <div class="col-md-4" v-for="(feature, index) in features" :key="index">
-            <transition name="fade-up" :delay="index * 100" appear>
-              <div class="card h-100 border-0 shadow-sm feature-card">
-                <div class="card-body p-4">
-                  <div class="feature-icon step-icon bg-gradient text-white rounded-4 mb-3">
-                    <i :class="`bi ${feature.icon}`"></i>
-                  </div>
-                  <h3 class="card-title h5">{{ feature.title }}</h3>
-                  <p class="card-text">{{ feature.description }}</p>
+            <div class="card h-100 border-0 shadow-sm feature-card">
+              <div class="card-body p-4">
+                <div class="feature-icon step-icon bg-gradient text-white rounded-4 mb-3">
+                  <i :class="`bi ${feature.icon}`"></i>
                 </div>
+                <h3 class="card-title h5">{{ feature.title }}</h3>
+                <p class="card-text">{{ feature.description }}</p>
               </div>
-            </transition>
+            </div>
           </div>
         </div>
       </div>

@@ -4,6 +4,45 @@ import { useScrollReveal } from "@/composables/useScrollReveal.js";
 // animacion de libreria scrollreveal
 const { setupScrollReveal } = useScrollReveal();
 setupScrollReveal();
+
+// Datos dinámicos para los pasos del proceso
+const processSteps = [
+  {
+    id: 1,
+    icon: "bi-play-circle",
+    title: "Inicio del proyecto",
+    description:
+      "Definimos el alcance, objetivos y requerimientos iniciales para establecer las bases del proyecto.",
+  },
+  {
+    id: 2,
+    icon: "bi-exclamation-triangle",
+    title: "Problemáticas",
+    description:
+      "Identificamos y analizamos los desafíos técnicos y operativos para diseñar soluciones efectivas.",
+  },
+  {
+    id: 3,
+    icon: "bi-code-slash",
+    title: "Desarrollo",
+    description:
+      "Construimos las soluciones utilizando las mejores prácticas de programación y arquitectura de software.",
+  },
+  {
+    id: 4,
+    icon: "bi-gear",
+    title: "Testing y Optimización",
+    description:
+      "Realizamos pruebas exhaustivas y optimizamos el rendimiento para garantizar la calidad del producto final.",
+  },
+  {
+    id: 5,
+    icon: "bi-check-circle",
+    title: "Resultado Final",
+    description:
+      "Entregamos soluciones funcionales completamente probadas y optimizadas proporcionando soporte continuo.",
+  },
+];
 </script>
 <template>
   <section class="py-5">
@@ -16,63 +55,24 @@ setupScrollReveal();
         </h2>
       </div>
 
-      <!-- Proceso en 4 pasos -->
+      <!-- Proceso dinámico -->
       <div class="row justify-content-center">
-        <!-- Paso 1: Inicio del proyecto -->
-        <div class="col-6 col-md-3 text-center mb-2 mb-md-0">
+        <div
+          v-for="(step, index) in processSteps"
+          :key="step.id"
+          class="col-6 col-lg-2-4 col-md-3 text-center mb-0 mb-md-2"
+        >
           <div class="process-step position-relative">
             <div class="step-icon mx-auto mb-3 rounded-circle reveal-bottom">
-              <i class="bi bi-play-circle fs-3 text-white"></i>
+              <i :class="`bi ${step.icon} fs-3 text-white`"></i>
             </div>
-            <div class="step-connector d-none d-lg-block"></div>
-            <h5 class="fw-bold mb-2 title-icon reveal-bottom">Inicio del proyecto</h5>
+            <div
+              v-if="index < processSteps.length - 1"
+              class="step-connector d-none d-lg-block"
+            ></div>
+            <h5 class="fw-bold mb-2 title-icon reveal-bottom">{{ step.title }}</h5>
             <p class="text-muted small px-2 reveal-bottom">
-              Definimos el alcance, objetivos y requerimientos iniciales para establecer las bases
-              del proyecto.
-            </p>
-          </div>
-        </div>
-
-        <!-- Paso 2: Problemáticas -->
-        <div class="col-6 col-md-3 text-center mb-2 mb-md-0">
-          <div class="process-step position-relative">
-            <div class="step-icon mx-auto mb-3 rounded-circle reveal-bottom">
-              <i class="bi bi-exclamation-triangle fs-3 text-white"></i>
-            </div>
-            <div class="step-connector d-none d-lg-block"></div>
-            <h5 class="fw-bold mb-2 title-icon reveal-bottom">Problemáticas</h5>
-            <p class="text-muted small px-2 reveal-bottom">
-              Identificamos y analizamos los desafíos técnicos y operativos para diseñar soluciones
-              efectivas.
-            </p>
-          </div>
-        </div>
-
-        <!-- Paso 3: Desarrollo -->
-        <div class="col-6 col-md-3 text-center mb-2 mb-md-0">
-          <div class="process-step position-relative">
-            <div class="step-icon mx-auto mb-3 rounded-circle reveal-bottom">
-              <i class="bi bi-code-slash fs-3 text-white"></i>
-            </div>
-            <div class="step-connector d-none d-lg-block"></div>
-            <h5 class="fw-bold mb-2 title-icon reveal-bottom">Desarrollo</h5>
-            <p class="text-muted small px-2 reveal-bottom">
-              Construimos las soluciones utilizando las mejores prácticas de programación y
-              arquitectura de software.
-            </p>
-          </div>
-        </div>
-
-        <!-- Paso 4: Resultado Final -->
-        <div class="col-6 col-md-3 text-center mb-2 mb-md-0">
-          <div class="process-step">
-            <div class="step-icon mx-auto mb-3 rounded-circle reveal-bottom">
-              <i class="bi bi-check-circle fs-3 text-white"></i>
-            </div>
-            <h5 class="fw-bold mb-2 title-icon reveal-bottom">Resultado Final</h5>
-            <p class="text-muted small px-2 reveal-bottom">
-              Entregamos soluciones funcionales completamente probadas y optimizadas proporcionando
-              soporte continuo.
+              {{ step.description }}
             </p>
           </div>
         </div>
