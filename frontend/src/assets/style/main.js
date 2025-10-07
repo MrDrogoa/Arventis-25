@@ -10,6 +10,8 @@ import "./components/callicons.css";
 import "./components/heroservice.css";
 import "./components/hser.css";
 import "./components/seraccion.css";
+import "./components/ourhistory.css";
+import "./components/miviva.css";
 
 // Importar estilos de vistas
 import "./views/home.css";

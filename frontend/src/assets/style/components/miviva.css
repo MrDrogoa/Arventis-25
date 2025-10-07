@@ -1,0 +1,116 @@
+/* Estilos para MiViVaComponentes - Misión, Visión y Valores */
+/* Basado exactamente en callicons.css para consistencia visual */
+
+/* Contenedor del icono circular - idéntico a step-icon */
+.mission-icon {
+  width: 64px;
+  height: 64px;
+  background-color: #08b2f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(8, 178, 247, 0.3);
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+}
+
+/* Líneas conectoras entre pasos - idéntico a step-connector */
+.mission-connector {
+  position: absolute;
+  top: 40px;
+  left: 100%;
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, #08b2f7 0%, #e9ecef 100%);
+  z-index: 1;
+}
+
+.miviva-card-container {
+  min-width: 280px;
+  max-width: 320px;
+}
+
+@media (min-width: 992px) {
+  .mission-connector {
+    width: 60px;
+  }
+
+  /* Solo mostrar conector entre las primeras 2 tarjetas */
+  .col-md-3:nth-child(3) .mission-connector {
+    display: none !important;
+  }
+
+  /* En tablets, ocultar conectores después de la segunda tarjeta */
+  .col-md-3:nth-child(3) .mission-connector {
+    display: none !important;
+  }
+}
+
+/* Último paso no tiene conector */
+.col-md-3:last-child .mission-connector {
+  display: none !important;
+}
+
+/* Efectos hover para el paso completo - idéntico a process-step */
+.mission-step {
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Título con efecto hover - idéntico a title-icon */
+.mission-title:hover {
+  color: #08b2f7;
+  transition: color 0.3s ease;
+}
+
+/* Texto descriptivo con altura fija - idéntico a process-step p */
+.mission-step p {
+  flex-grow: 1;
+  color: #6c757d;
+  font-size: 0.875rem;
+  padding: 0 0.5rem;
+}
+
+/* Responsive adjustments - idéntico a callicons */
+@media (max-width: 767px) {
+  .mission-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .mission-step {
+    min-height: 240px;
+  }
+
+  .mission-step p {
+    min-height: 60px;
+  }
+}
+
+/* Animación de entrada - idéntica a callicons */
+.mission-step {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.mission-step:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.mission-step:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.mission-step:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

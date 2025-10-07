@@ -29,30 +29,6 @@
 }
 
 /* En tablets usar flexbox más simple */
-@media (max-width: 991px) {
-  .row.justify-content-center {
-    gap: 1.5rem;
-  }
-
-  .col-lg-2-4 {
-    flex: 1;
-    min-width: 250px;
-    max-width: 300px;
-  }
-
-  .col-lg-2-4:nth-child(3) {
-    margin-right: 0;
-  }
-
-  .col-lg-2-4:nth-child(4) {
-    flex-basis: auto;
-    margin-right: 0;
-  }
-
-  .col-lg-2-4:nth-child(5) {
-    margin-left: 0;
-  }
-}
 
 @media (max-width: 767px) {
   .row.justify-content-center {
@@ -70,6 +46,11 @@
   .col-lg-2-4:nth-child(4),
   .col-lg-2-4:nth-child(5) {
     margin: 0;
+  }
+
+  .step-icon {
+    width: 60px;
+    height: 60px;
   }
 }
 
@@ -97,6 +78,28 @@
 }
 
 @media (min-width: 992px) {
+  .row.justify-content-center {
+    gap: 1.5rem;
+  }
+
+  .col-lg-2-4 {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+  }
+
+  .col-lg-2-4:nth-child(3) {
+    margin-right: 0;
+  }
+
+  .col-lg-2-4:nth-child(4) {
+    flex-basis: auto;
+    margin-right: 0;
+  }
+
+  .col-lg-2-4:nth-child(5) {
+    margin-left: 0;
+  }
   .step-connector {
     width: 60px;
   }
@@ -111,9 +114,7 @@
   .col-lg-2-4:nth-child(4) .step-connector {
     display: block !important;
   }
-}
 
-@media (max-width: 991px) {
   /* En tablets, ocultar conectores después de la segunda tarjeta de cada fila */
   .col-lg-2-4:nth-child(3) .step-connector,
   .col-lg-2-4:nth-child(5) .step-connector {
@@ -145,14 +146,6 @@
 /* Texto descriptivo con altura fija */
 .process-step p {
   flex-grow: 1;
-}
-
-/* Responsive adjustments */
-@media (max-width: 767px) {
-  .step-icon {
-    width: 60px;
-    height: 60px;
-  }
 }
 
 /* Animación de entrada */

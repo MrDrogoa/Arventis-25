@@ -63,6 +63,12 @@
   color: var(--secondary-bg);
 }
 
+/* Icono de misión-vision-valores */
+.rest-mode .mission-icon {
+  background-color: var(--primary-bg) !important;
+  color: var(--secondary-bg);
+}
+
 .rest-mode .text-primary {
   color: var(--link-color) !important;
 }

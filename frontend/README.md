@@ -2,7 +2,128 @@
 
 Proyecto frontend para Arventis - Soluciones tecnológicas innovadoras.
 
-## 🚀 Últimas actualizaciones (3 Oct 2025)
+## 🚀 Últimas actualizaciones (7 Oct 2025)
+
+### 🎯 Nuevos componentes modulares desarrollados
+- **OurHistoryComponents.vue**: Sección de historia de la empresa con imagen y overlay elegante
+- **CountComponents.vue**: Contador animado de estadísticas con efectos temporizador
+- **MiViVaComponentes.vue**: Misión, Visión y Valores con estilo unificado
+- **GroupComponents.vue**: Componente autónomo del equipo de trabajo
+
+### 🎨 Efectos visuales avanzados implementados
+
+#### **OurHistoryComponents con overlay sofisticado**
+- **Imagen con sombreado blanco**: Gradiente superpuesto para efecto profesional
+- **Animación shimmer**: Efecto de brillo sutil con movimiento rotacional
+- **Hover effects**: Elevación y escala de imagen en interacción
+- **Responsive adaptativo**: Optimizado para todos los dispositivos
+
+#### **CountComponents con animación de contador**
+- **Temporizador animado**: Números incrementan gradualmente hasta el valor final
+- **Easing personalizado**: Función `easeOutQuart` para movimiento natural
+- **Efecto escalonado**: Cada contador inicia con 300ms de diferencia
+- **Performance optimizada**: Usa `requestAnimationFrame` para fluidez
+
+### 🔄 Refactorización de componentes y separación de responsabilidades
+
+#### **MiViVaComponentes - Estilo unificado con CalliconsComponents**
+- **Diseño consistente**: Mismo sistema visual que proceso de trabajo
+- **Iconos circulares**: Fondo azul `#08b2f7` con sombra y efectos hover
+- **Líneas conectoras**: Flujo visual Misión→Visión→Valores
+- **Animaciones sincronizadas**: `fadeInUp` con delays escalonados
+
+#### **Separación de datos y componentes**
+- **CountComponents autónomo**: Datos de estadísticas movidos del AboutView
+- **GroupComponents independiente**: Información del equipo centralizada
+- **AboutView optimizado**: Solo mantiene datos de valores empresariales
+- **Imports actualizados**: Estructura modular mejorada
+
+### 🎨 Estilos CSS especializados
+
+#### **ourhistory.css - Efectos de imagen avanzados**
+```css
+.image-overlay {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.1) 25%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(255, 255, 255, 0.1) 75%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+}
+```
+
+#### **Miviva.css - Unificación con callicons**
+- **Contenedores idénticos**: `.mission-icon` replica `.step-icon`
+- **Conectores visuales**: `.mission-connector` con gradiente
+- **Responsive matching**: Breakpoints y tamaños exactos
+- **Animaciones consistentes**: Misma duración y delays
+
+### ⚡ Animaciones y efectos interactivos
+
+#### **Contador con temporizador realista**
+- **Duración personalizada**: 2-2.6 segundos por contador
+- **Valores dinámicos**: Separación de números y sufijos ("+")
+- **Inicialización retardada**: 500ms para visibilidad mejorada
+- **Finalización precisa**: Garantiza llegar al valor exacto
+
+#### **Efectos hover unificados**
+- **Iconos escalables**: `transform: scale(1.05)` en hover
+- **Títulos interactivos**: Color azul primario en hover
+- **Tarjetas elevadas**: `translateY(-5px)` para profundidad
+- **Transiciones suaves**: 0.3s en todas las animaciones
+
+### 📐 Mejoras de layout y responsive
+
+#### **Bootstrap borders y utilidades**
+- **Sistema de bordes completo**: `.border-1` a `.border-5`
+- **Colores específicos**: `.border-primary`, `.border-secondary`
+- **Estilos variados**: `.border-solid`, `.border-dashed`, `.border-dotted`
+- **Bordes redondeados**: `.rounded-1` a `.rounded-3`, `.rounded-pill`
+
+#### **Grid y flexbox optimizado**
+- **Líneas conectoras responsivas**: Visibles solo en desktop
+- **Espaciado uniforme**: Flexbox para distribución automática
+- **Altura consistente**: `min-height: 280px` en tarjetas
+- **Mobile-first**: Adaptación progressive enhancement
+
+### 🔧 Arquitectura de componentes mejorada
+
+#### **Separación de concerns**
+- **Datos específicos**: Cada componente maneja sus propios datos
+- **Reutilización**: Componentes independientes y portables
+- **Mantenibilidad**: Código más limpio y organizados
+- **Escalabilidad**: Fácil expansión y modificación
+
+#### **Composables y hooks**
+- **useScrollReveal**: Animaciones reutilizables
+- **Composition API**: Setup moderno en nuevos componentes
+- **Props y eventos**: Comunicación limpia entre componentes
+
+### 📱 Optimizaciones responsive específicas
+
+#### **Breakpoints estratégicos**
+- **Desktop (≥992px)**: Líneas conectoras y efectos completos
+- **Tablets (768-991px)**: Layout adaptativo sin conectores
+- **Mobile (≤767px)**: Elementos compactos y spacing optimizado
+
+#### **Performance mobile**
+- **Iconos reducidos**: 60px en lugar de 64px en móviles
+- **Animaciones suavizadas**: Duraciones ajustadas para dispositivos
+- **Spacing eficiente**: Gaps y márgenes optimizados
+
+### 🎯 Nuevos archivos creados/modificados (7 Oct 2025)
+- `src/components/OurHistoryComponents.vue` - Historia empresarial
+- `src/components/CountComponents.vue` - Contador animado
+- `src/components/MiViVaComponentes.vue` - Misión, Visión, Valores
+- `src/components/GroupComponents.vue` - Equipo de trabajo
+- `src/assets/style/components/ourhistory.css` - Efectos de imagen
+- `src/assets/style/components/Miviva.css` - Estilos MiViVa unificados
+- `src/views/AboutView.vue` - Refactorización y componentización
+
+---
+
+## 🚀 Actualizaciones anteriores (3 Oct 2025)
 
 ### 🔄 Refactorización CalliconsComponents - Layout Flexbox Moderno
 - **Migración a Flexbox**: Reemplazo completo del sistema de grid con porcentajes por flexbox nativo
