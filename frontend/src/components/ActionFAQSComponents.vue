@@ -1,14 +1,20 @@
-<script setup></script>
+<script setup>
+import { useScrollReveal } from "@/composables/useScrollReveal.js";
+
+// animacion de libreria scrollreveal
+const { setupScrollReveal } = useScrollReveal();
+setupScrollReveal();
+</script>
+
 <template>
-  <section class="cta-overlay-section position-relative pb-5 bg-ser">
-    <!-- Rectángulo superpuesto -->
+  <section class="cta-overlay-section position-relative pb-5">
     <div class="cta-overlay-box">
       <div class="container position-relative">
         <div class="row justify-content-between align-items-center">
           <div class="col-lg-8 text-white">
-            <h3 class="mb-3 fw-bold">¿Necesita una solución personalizada?</h3>
+            <h3 class="mb-3 fw-bold">¿No encuentra respuesta a su pregunta?</h3>
             <p class="mb-lg-0 text-white opacity-90">
-              Contáctenos hoy para discutir su proyecto y recibir una consulta sin compromiso.
+              Nuestro equipo está listo para ayudarle con cualquier consulta adicional que tenga.
             </p>
           </div>
           <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
@@ -16,12 +22,11 @@
               to="/contact"
               class="btn btn-outline-light btn-lg px-4 fw-semibold text-decoration-none reveal-top-1"
             >
-              Solicitar información
+              Contáctenos
             </router-link>
           </div>
         </div>
-
-        <!-- Puntos decorativos -->
+        <!-- puntos decorativos -->
         <div class="dots-pattern">
           <div class="dot dot-1"></div>
           <div class="dot dot-2"></div>

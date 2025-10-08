@@ -3,6 +3,12 @@
   text-align: center;
 }
 
+/* textarea styles */
+
+.textarea-contact {
+  resize: none;
+}
+
 .map-container {
   overflow: hidden;
 }
@@ -13,8 +19,12 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Estilos para los asteriscos de campos requeridos */

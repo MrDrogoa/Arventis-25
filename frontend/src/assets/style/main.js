@@ -12,6 +12,10 @@ import "./components/hser.css";
 import "./components/seraccion.css";
 import "./components/ourhistory.css";
 import "./components/miviva.css";
+import "./components/herofaqs.css";
+import "./components/herocontact.css";
+import "./components/team.css";
+import "./components/neekworld.css";
 
 // Importar estilos de vistas
 import "./views/home.css";

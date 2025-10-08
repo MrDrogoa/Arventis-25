@@ -10,16 +10,14 @@ setupScrollReveal();
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center text-white">
-          <h2 class="mb-4 fw-bold display-6 font-family reveal-right">
-            ¿Listo para transformar su negocio?
-          </h2>
+          <h2 class="mb-4 fw-bold display-6 font-family">¿Listo para transformar su negocio?</h2>
           <p class="w-75 mb-4 fw-medium text-white mx-auto">
             Contáctenos hoy y descubra cómo nuestras soluciones tecnológicas pueden ayudar a
             alcanzar sus objetivos.
           </p>
           <router-link
             to="/contact"
-            class="btn link-hero btn-lg px-5 text-decoration-none text-white fw-semibold"
+            class="btn link-hero btn-lg px-5 text-decoration-none text-white fw-semibold reveal-right"
           >
             Solicitar consulta gratuita
           </router-link>

@@ -5,9 +5,7 @@
   <div id="app" class="d-flex flex-column min-vh-100">
     <Header />
 
-    <transition name="fade" mode="out-in">
-      <router-view class="flex-grow-1" />
-    </transition>
+    <router-view class="flex-grow-1" />
 
     <AccessibilityControls />
 

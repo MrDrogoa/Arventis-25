@@ -12,21 +12,6 @@
   overflow: hidden;
 }
 
-@media (min-width: 768px) {
-  .cta-overlay-box {
-    margin: 0 2rem;
-    padding: 4rem 3rem;
-  }
-}
-
-@media (min-width: 992px) {
-  .cta-overlay-box {
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 4rem 4rem;
-  }
-}
-
 /* Puntos decorativos */
 .dots-pattern {
   position: absolute;
@@ -167,6 +152,20 @@
   box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
 }
 
+/* Fondo blanco para la sección de servicio */
+.bg-ser {
+  background-color: #fff;
+}
+
+/* Responsive para dispositivos móviles */
+@media (min-width: 992px) {
+  .cta-overlay-box {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 4rem 4rem;
+  }
+}
+
 /* Responsive para dispositivos móviles */
 @media (max-width: 767px) {
   .cta-overlay-box {
@@ -193,5 +192,10 @@
   .dot-17 {
     width: 7px;
     height: 7px;
+  }
+
+  .cta-overlay-box {
+    margin: 0 2rem;
+    padding: 4rem 3rem;
   }
 }

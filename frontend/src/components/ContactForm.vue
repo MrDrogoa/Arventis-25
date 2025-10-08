@@ -2,7 +2,8 @@
   <div class="container mt-5">
     <h2 class="text-center mb-4">Formulario de Contacto</h2>
     <p class="text-center mb-4">
-      Si tienes alguna pregunta o necesitas más información, completa el siguiente formulario y nos pondremos en contacto contigo a la brevedad.
+      Si tienes alguna pregunta o necesitas más información, completa el siguiente formulario y nos
+      pondremos en contacto contigo a la brevedad.
     </p>
   </div>
   <div class="contact-form-container">
@@ -30,20 +31,12 @@
           required
           aria-describedby="emailHelp"
         />
-        <div class="invalid-feedback">
-          Por favor, ingrese un correo electrónico válido.
-        </div>
+        <div class="invalid-feedback">Por favor, ingrese un correo electrónico válido.</div>
       </div>
 
       <div class="mb-3">
         <label for="subject" class="form-label">Asunto</label>
-        <input
-          type="text"
-          class="form-control"
-          id="subject"
-          v-model="formData.subject"
-          required
-        />
+        <input type="text" class="form-control" id="subject" v-model="formData.subject" required />
         <div class="invalid-feedback">Por favor, ingrese un asunto.</div>
       </div>
 
@@ -69,9 +62,7 @@
           ref="fileInput"
           @change="handleFileChange"
         />
-        <div class="form-text">
-          Formatos permitidos: imágenes, PDF, documentos Word (máx. 5MB)
-        </div>
+        <div class="form-text">Formatos permitidos: imágenes, PDF, documentos Word (máx. 5MB)</div>
       </div>
 
       <div class="form-check mb-3">
@@ -93,33 +84,26 @@
         </div>
       </div>
 
-      <button
-        type="submit"
-        class="btn btn-primary"
-        :disabled="isSubmitting"
-      >
-        <span v-if="isSubmitting" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
-        {{ isSubmitting ? 'Enviando...' : 'Enviar mensaje' }}
+      <button type="submit" class="btn btn-primary" :disabled="isSubmitting">
+        <span
+          v-if="isSubmitting"
+          class="spinner-border spinner-border-sm me-2"
+          role="status"
+          aria-hidden="true"
+        ></span>
+        {{ isSubmitting ? "Enviando..." : "Enviar mensaje" }}
       </button>
 
-      <div
-        v-if="formSubmitted"
-        class="alert alert-success mt-3"
-        role="alert"
-      >
+      <div v-if="formSubmitted" class="alert alert-success mt-3" role="alert">
         ¡Gracias por contactarnos! Responderemos a la brevedad.
         <div class="mt-2 small">ID de mensaje: {{ messageId }}</div>
       </div>
-      
-      <div
-        v-if="formError"
-        class="alert alert-danger mt-3"
-        role="alert"
-      >
+
+      <div v-if="formError" class="alert alert-danger mt-3" role="alert">
         {{ errorMessage }}
       </div>
     </form>
-    
+
     <!-- Technical error details (development only) -->
     <div v-if="process.env.NODE_ENV !== 'production' && debugInfo" class="mt-4 small">
       <div class="alert alert-warning">
@@ -131,15 +115,15 @@
 </template>
 
 <script>
-import contactMessagesApi from '@/api/contactMessages';
+import contactMessagesApi from "@/api/contactMessages";
 
 export default {
   name: "ContactForm",
   props: {
     formIdentifier: {
       type: String,
-      default: 'default-form'
-    }
+      default: "default-form",
+    },
   },
   data() {
     return {
@@ -165,8 +149,8 @@ export default {
         browserInfo: "",
         screenResolution: "",
         deviceType: "",
-        language: ""
-      }
+        language: "",
+      },
     };
   },
   created() {
@@ -174,11 +158,11 @@ export default {
     if (this.$route.query.subject) {
       this.formData.subject = this.$route.query.subject;
     }
-    
+
     // Capture source URL and referrer
     this.formData.sourceUrl = window.location.href;
     this.formData.referrer = document.referrer || "direct";
-    
+
     // Collect browser metadata
     this.collectBrowserMetadata();
   },
@@ -188,160 +172,161 @@ export default {
       this.metadata.browserInfo = navigator.userAgent;
       this.metadata.screenResolution = `${window.screen.width}x${window.screen.height}`;
       this.metadata.language = navigator.language;
-      
+
       // Detect device type
       const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-      this.metadata.deviceType = isMobile ? 'mobile' : 'desktop';
+      this.metadata.deviceType = isMobile ? "mobile" : "desktop";
     },
-    
+
     handleFileChange(event) {
       const file = event.target.files[0];
       if (file) {
         // Check file size (max 5MB)
         if (file.size > 5 * 1024 * 1024) {
-          alert('El archivo es demasiado grande. El tamaño máximo permitido es 5MB.');
-          this.$refs.fileInput.value = '';
+          alert("El archivo es demasiado grande. El tamaño máximo permitido es 5MB.");
+          this.$refs.fileInput.value = "";
           this.selectedFile = null;
           return;
         }
-        
+
         // Check file type
         const allowedTypes = [
-          'image/jpeg', 
-          'image/png', 
-          'application/pdf',
-          'application/msword',
-          'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+          "image/jpeg",
+          "image/png",
+          "application/pdf",
+          "application/msword",
+          "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
         ];
-        
+
         if (!allowedTypes.includes(file.type)) {
-          alert('Tipo de archivo no permitido. Solo se permiten imágenes, PDF y documentos Word.');
-          this.$refs.fileInput.value = '';
+          alert("Tipo de archivo no permitido. Solo se permiten imágenes, PDF y documentos Word.");
+          this.$refs.fileInput.value = "";
           this.selectedFile = null;
           return;
         }
-        
+
         this.selectedFile = file;
       } else {
         this.selectedFile = null;
       }
     },
-    
+
     validateAndSubmit() {
       // Reset validation
       this.validationErrors = {};
       this.formError = false;
       this.errorMessage = "";
       this.debugInfo = null;
-      
+
       // Validate required fields
       const requiredFields = {
-        name: 'Nombre completo',
-        email: 'Correo electrónico',
-        subject: 'Asunto',
-        message: 'Mensaje'
+        name: "Nombre completo",
+        email: "Correo electrónico",
+        subject: "Asunto",
+        message: "Mensaje",
       };
-      
+
       Object.keys(requiredFields).forEach(field => {
         if (!this.formData[field]) {
           this.validationErrors[field] = `El campo "${requiredFields[field]}" es obligatorio`;
         }
       });
-      
+
       // Validate email format
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (this.formData.email && !emailRegex.test(this.formData.email)) {
-        this.validationErrors.email = 'Por favor ingrese un correo electrónico válido';
+        this.validationErrors.email = "Por favor ingrese un correo electrónico válido";
       }
-      
+
       // Privacy policy validation - critical
       if (!this.formData.privacyAccepted) {
-        this.validationErrors.privacyAccepted = 'Debe aceptar la política de privacidad';
+        this.validationErrors.privacyAccepted = "Debe aceptar la política de privacidad";
       }
-      
+
       // Form validation using Bootstrap
       const form = this.$refs.form;
-      form.classList.add('was-validated');
-      
+      form.classList.add("was-validated");
+
       // Check for validation errors
       if (Object.keys(this.validationErrors).length > 0) {
         this.formError = true;
         this.errorMessage = "Por favor complete todos los campos obligatorios correctamente.";
-        console.error('Validation errors:', this.validationErrors);
+        console.error("Validation errors:", this.validationErrors);
         return;
       }
-      
+
       // If validation passes, submit the form
       this.submitForm();
     },
-    
+
     async submitForm() {
       this.isSubmitting = true;
-      
+
       try {
         // Make sure privacyAccepted is boolean true, not string or other value
         this.formData.privacyAccepted = Boolean(this.formData.privacyAccepted);
-        
+
         // Prepare form data
         this.formData.submittedAt = new Date().toISOString();
-        
+
         let response;
         let messageData;
-        
+
         // Check if we have a file attachment
         if (this.selectedFile) {
           const formData = new FormData();
-          
+
           // Add all form fields to FormData
           Object.keys(this.formData).forEach(key => {
             // Convert booleans to strings for FormData
-            const value = typeof this.formData[key] === 'boolean' 
-              ? this.formData[key].toString() 
-              : this.formData[key];
-            
-            formData.append(key, value === null ? '' : value);
+            const value =
+              typeof this.formData[key] === "boolean"
+                ? this.formData[key].toString()
+                : this.formData[key];
+
+            formData.append(key, value === null ? "" : value);
           });
-          
+
           // Add metadata
           Object.keys(this.metadata).forEach(key => {
-            formData.append(`metadata[${key}]`, this.metadata[key] || '');
+            formData.append(`metadata[${key}]`, this.metadata[key] || "");
           });
-          
+
           // Add the file
-          formData.append('attachment', this.selectedFile);
-          
+          formData.append("attachment", this.selectedFile);
+
           // For debugging
-          if (process.env.NODE_ENV !== 'production') {
-            console.log('Submitting form with attachment:', {
-              formFields: Object.fromEntries(formData.entries())
+          if (process.env.NODE_ENV !== "production") {
+            console.log("Submitting form with attachment:", {
+              formFields: Object.fromEntries(formData.entries()),
             });
           }
-          
+
           // Submit with attachment
           response = await contactMessagesApi.submitMessageWithAttachment(formData);
         } else {
           // Submit without attachment
           messageData = {
             ...this.formData,
-            metadata: this.metadata
+            metadata: this.metadata,
           };
-          
+
           // For debugging
-          if (process.env.NODE_ENV !== 'production') {
-            console.log('Submitting form data:', messageData);
+          if (process.env.NODE_ENV !== "production") {
+            console.log("Submitting form data:", messageData);
           }
-          
+
           // Submit without attachment
           response = await contactMessagesApi.submitMessage(messageData);
         }
-        
+
         // Handle successful submission
         this.messageId = response.messageId;
         this.formSubmitted = true;
-        
+
         // Reset form
         this.resetForm();
-        
+
         // Hide success message after 8 seconds
         setTimeout(() => {
           this.formSubmitted = false;
@@ -349,25 +334,27 @@ export default {
       } catch (error) {
         // Handle submission error
         this.formError = true;
-        this.errorMessage = error.message || 'Ha ocurrido un error al enviar el formulario. Por favor, inténtelo nuevamente.';
-        
+        this.errorMessage =
+          error.message ||
+          "Ha ocurrido un error al enviar el formulario. Por favor, inténtelo nuevamente.";
+
         // Save debug info
-        if (process.env.NODE_ENV !== 'production') {
+        if (process.env.NODE_ENV !== "production") {
           this.debugInfo = {
             errorMessage: error.message,
             errorStack: error.stack,
             formData: { ...this.formData, privacyAccepted: Boolean(this.formData.privacyAccepted) },
-            endpoint: process.env.VUE_APP_API_URL || 'Default API URL'
+            endpoint: process.env.VUE_APP_API_URL || "Default API URL",
           };
-          console.error('Form submission error:', error);
+          console.error("Form submission error:", error);
         }
       } finally {
         this.isSubmitting = false;
         // Remove validation styling
-        this.$refs.form.classList.remove('was-validated');
+        this.$refs.form.classList.remove("was-validated");
       }
     },
-    
+
     resetForm() {
       this.formData = {
         name: "",
@@ -377,23 +364,23 @@ export default {
         privacyAccepted: false,
         submittedAt: null,
         sourceUrl: this.formData.sourceUrl,
-        referrer: this.formData.referrer
+        referrer: this.formData.referrer,
       };
-      
+
       // Reset file input
       if (this.$refs.fileInput) {
-        this.$refs.fileInput.value = '';
+        this.$refs.fileInput.value = "";
       }
       this.selectedFile = null;
-      
+
       // Reset form validation
-      this.$refs.form.classList.remove('was-validated');
-      
+      this.$refs.form.classList.remove("was-validated");
+
       // Clear validation errors
       this.validationErrors = {};
       this.debugInfo = null;
-    }
-  }
+    },
+  },
 };
 </script>
 

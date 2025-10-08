@@ -15,6 +15,8 @@
     <!-- Sección de servicios -->
     <HeroSerComponents />
 
+    <!-- Sección de NeekWorld -->
+    <NeekWorldSerComponents />
     <section class="services-section py-5">
       <div class="container">
         <div class="row mb-5">
@@ -43,6 +45,7 @@
       </div>
     </section>
 
+    <!-- action servicios -->
     <SerAcComponents />
   </main>
 </template>
@@ -52,6 +55,7 @@ import ServiceCard from "@/components/ServiceCard.vue";
 import HeroServiceComponents from "@/components/HeroServiceComponents.vue";
 import HeroSerComponents from "@/components/HeroSerComponents.vue";
 import SerAcComponents from "@/components/SerAcComponents.vue";
+import NeekWorldSerComponents from "@/components/NeekWorldSerComponents.vue";
 
 export default {
   name: "ServicesView",
@@ -60,6 +64,7 @@ export default {
     HeroServiceComponents,
     HeroSerComponents,
     SerAcComponents,
+    NeekWorldSerComponents,
   },
   data() {
     return {

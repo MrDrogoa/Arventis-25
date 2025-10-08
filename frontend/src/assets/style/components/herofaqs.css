@@ -1,0 +1,8 @@
+.bg-faqs {
+  background: linear-gradient(135deg, #0879b1 0%, #1699cd 100%);
+}
+
+/* Estilos para el componente Hero de FAQs */
+.bg-faqs h2 {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}

@@ -7,7 +7,8 @@ const routes = [
     component: () => import("../views/HomeView.vue"),
     meta: {
       title: "Inicio | Arventis Digital Solutions",
-      description: "Soluciones tecnológicas innovadoras: Plataformas educativas (Moodle), Automatización de procesos, Desarrollo web, Ciberseguridad, Marketing digital, Capacitaciones certificadas y Soporte continuo.",
+      description:
+        "Soluciones tecnológicas innovadoras: Plataformas educativas (Moodle), Automatización de procesos, Desarrollo web, Ciberseguridad, Marketing digital, Capacitaciones certificadas y Soporte continuo.",
     },
   },
   {
@@ -16,7 +17,8 @@ const routes = [
     component: () => import("../views/ServicesView.vue"),
     meta: {
       title: "Servicios | Arventis Digital Solutions",
-      description: "Nuestros servicios especializados: Plataformas educativas con Moodle, Automatización de procesos administrativos, Desarrollo web y sistemas a medida, Ciberseguridad, Marketing digital con analítica, Capacitaciones certificadas y Soporte postventa.",
+      description:
+        "Nuestros servicios especializados: Plataformas educativas con Moodle, Automatización de procesos administrativos, Desarrollo web y sistemas a medida, Ciberseguridad, Marketing digital con analítica, Capacitaciones certificadas y Soporte postventa.",
     },
   },
   {
@@ -25,7 +27,8 @@ const routes = [
     component: () => import("../views/AboutView.vue"),
     meta: {
       title: "Sobre Nosotros | Arventis Digital Solutions",
-      description: "Conozca nuestro equipo profesional, historia y valores. Comprometidos con la excelencia e innovación tecnológica desde Ovalle, Chile.",
+      description:
+        "Conozca nuestro equipo profesional, historia y valores. Comprometidos con la excelencia e innovación tecnológica desde Ovalle, Chile.",
     },
   },
   {
@@ -34,7 +37,18 @@ const routes = [
     component: () => import("../views/ContactView.vue"),
     meta: {
       title: "Contacto | Arventis Digital Solutions",
-      description: "Póngase en contacto con nuestro equipo. Estamos aquí para ayudarle con sus proyectos y consultas sobre plataformas Moodle, desarrollo web, ciberseguridad y más.",
+      description:
+        "Póngase en contacto con nuestro equipo. Estamos aquí para ayudarle con sus proyectos y consultas sobre plataformas Moodle, desarrollo web, ciberseguridad y más.",
+    },
+  },
+  {
+    path: "/neekworld",
+    name: "NeekWorld",
+    component: () => import("../views/NeekWorldView.vue"),
+    meta: {
+      title: "NeekWorld | Arventis Digital Solutions",
+      description:
+        "Descubre NeekWorld, un espacio virtual innovador para la educación y la colaboración en línea.",
     },
   },
   {
@@ -43,7 +57,8 @@ const routes = [
     component: () => import("../views/PrivacyView.vue"),
     meta: {
       title: "Política de Privacidad | Arventis Digital Solutions",
-      description: "Información sobre cómo Arventis Digital Solutions recopila, utiliza y protege sus datos personales.",
+      description:
+        "Información sobre cómo Arventis Digital Solutions recopila, utiliza y protege sus datos personales.",
     },
   },
   {
@@ -52,7 +67,8 @@ const routes = [
     component: () => import("../views/FAQsView.vue"),
     meta: {
       title: "Preguntas Frecuentes | Arventis Digital Solutions",
-      description: "Consulte nuestras preguntas frecuentes sobre plataformas educativas, automatización, desarrollo web, ciberseguridad, marketing digital, capacitaciones certificadas y soporte.",
+      description:
+        "Consulte nuestras preguntas frecuentes sobre plataformas educativas, automatización, desarrollo web, ciberseguridad, marketing digital, capacitaciones certificadas y soporte.",
     },
   },
   {
@@ -62,7 +78,8 @@ const routes = [
     props: true,
     meta: {
       title: "Foro de Servicio | Arventis Digital Solutions",
-      description: "Información detallada y preguntas frecuentes sobre nuestros servicios especializados en tecnología educativa, desarrollo web y seguridad informática.",
+      description:
+        "Información detallada y preguntas frecuentes sobre nuestros servicios especializados en tecnología educativa, desarrollo web y seguridad informática.",
     },
   },
   {
@@ -87,7 +104,7 @@ const router = createRouter({
 });
 
 // afterEach hook for updating document title and meta description
-router.afterEach((to) => {
+router.afterEach(to => {
   // Update document title
   document.title = to.meta.title || "Arventis Digital Solutions";
 

@@ -15,7 +15,7 @@ import Oficina from "@/assets/img/oficina.webp";
       <div class="col-lg-6">
         <div class="px-0 px-lg-3 paragraph-history">
           <!-- Título de la historia -->
-          <h2 class="mb-3 fw-bold display-6">Nuestra Historia</h2>
+          <h2 class="mb-3 fw-bold display-6 reveal-right-2">Nuestra Historia</h2>
           <!-- Descripción de la historia -->
           <p>
             Fundada en 2010 en Ovalle, Chile, Arventis comenzó como un pequeño equipo de
