@@ -1,18 +1,21 @@
 <template>
   <main id="content">
     <!-- hero section -->
-    <HeroComponents />
+    <HomeHeroComponents />
 
-    <section class="features-section py-5">
+    <!-- cards-home -->
+    <section class="py-5">
       <div class="container">
-        <h2 class="mb-5 fw-bold display-6 font-family text-center reveal-left">
+        <h2 class="mb-5 fw-bold display-6 text-center reveal-left">
           ¿Por qué elegir <span class="text-primary">Arventis</span>?
         </h2>
         <div class="row g-4">
           <div class="col-md-4" v-for="(feature, index) in features" :key="index">
             <div class="card h-100 border-0 shadow-sm feature-card">
               <div class="card-body p-4">
-                <div class="feature-icon step-icon bg-gradient text-white rounded-4 mb-3">
+                <div
+                  class="fs-3 d-inline-flex align-items-center justify-content-center step-icon bg-gradient text-white rounded-4 mb-3"
+                >
                   <i :class="`bi ${feature.icon}`"></i>
                 </div>
                 <h3 class="card-title h5">{{ feature.title }}</h3>
@@ -36,7 +39,7 @@
 
 <script>
 import { placeholders } from "../assets/placeholders.js";
-import HeroComponents from "../components/HeroComponents.vue";
+import HomeHeroComponents from "../components/HomeHeroComponents.vue";
 import CallActionComponents from "../components/CallActionComponents.vue";
 import ComputerComponents from "../components/ComputerComponents.vue";
 import CalliconsComponents from "../components/CalliconsComponents.vue";
@@ -52,7 +55,7 @@ export default {
     return {};
   },
   components: {
-    HeroComponents,
+    HomeHeroComponents,
     CallActionComponents,
     ComputerComponents,
     CalliconsComponents,

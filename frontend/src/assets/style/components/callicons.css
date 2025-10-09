@@ -18,39 +18,64 @@
 }
 
 .col-lg-2-4:nth-child(4) {
-  flex-basis: 100%;
-  flex: 0 1 280px;
   margin-right: 0.5rem;
 }
 
 .col-lg-2-4:nth-child(5) {
-  flex: 0 1 280px;
   margin-left: 0.5rem;
 }
 
-/* En tablets usar flexbox más simple */
+/* En tablets (768px - 991px) - 2 tarjetas por fila */
+@media (max-width: 991px) and (min-width: 768px) {
+  .row.justify-content-center {
+    gap: 1.5rem;
+  }
 
+  .col-lg-2-4 {
+    flex: 1 1 calc(50% - 0.75rem);
+    min-width: 250px;
+    max-width: 350px;
+    margin-bottom: 2rem !important;
+  }
+
+  .col-lg-2-4:nth-child(3),
+  .col-lg-2-4:nth-child(4),
+  .col-lg-2-4:nth-child(5) {
+    margin: 0 0 2rem 0;
+  }
+
+  .step-icon {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+/* En móviles (hasta 767px) - 1 tarjeta por fila */
 @media (max-width: 767px) {
   .row.justify-content-center {
     gap: 2rem;
   }
 
   .col-lg-2-4 {
-    flex: 1 1 45%;
-    min-width: 200px;
-    max-width: none;
-    margin-bottom: 0 !important;
+    flex: 1 1 100%;
+    min-width: 280px;
+    max-width: 400px;
+    margin-bottom: 2rem !important;
   }
 
   .col-lg-2-4:nth-child(3),
   .col-lg-2-4:nth-child(4),
   .col-lg-2-4:nth-child(5) {
-    margin: 0;
+    margin: 0 0 2rem 0;
   }
 
   .step-icon {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
+  }
+
+  .process-step {
+    min-height: 240px;
   }
 }
 
@@ -105,8 +130,7 @@
   }
 
   /* Solo mostrar conectores entre las primeras 2 tarjetas y entre las 2 de abajo */
-  .col-lg-2-4:nth-child(3) .step-connector,
-  .col-lg-2-4:nth-child(5) .step-connector {
+  .col-lg-2-4:nth-child(3) .step-connector {
     display: none !important;
   }
 
@@ -115,25 +139,23 @@
     display: block !important;
   }
 
-  /* En tablets, ocultar conectores después de la segunda tarjeta de cada fila */
-  .col-lg-2-4:nth-child(3) .step-connector,
+  /* Mostrar conector entre la 5ta y 6ta tarjeta (Resultado Final y Mejora Continua) */
   .col-lg-2-4:nth-child(5) .step-connector {
+    display: block !important;
+  }
+}
+
+/* Ocultar conectores en tablets y móviles */
+@media (max-width: 991px) {
+  .step-connector {
     display: none !important;
   }
 }
 
-/* Últimos pasos no tienen conector */
+/* Último paso no tiene conector */
 .col-lg-2-4:last-child .step-connector,
 .col-md-3:last-child .step-connector {
   display: none !important;
-}
-
-/* Efectos hover para el paso completo */
-.process-step {
-  min-height: 280px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 /* Flexbox maneja el espaciado automáticamente */

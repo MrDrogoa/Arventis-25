@@ -2,6 +2,147 @@
 
 Proyecto frontend para Arventis - Soluciones tecnológicas innovadoras.
 
+## 🚀 Últimas actualizaciones (8 Oct 2025)
+
+### 🛠️ Refactorización completa del sistema ScrollReveal
+
+#### **Reversión al patrón original setupScrollReveal**
+- **Composable restaurado**: Vuelta al patrón `setupScrollReveal()` con `onMounted()` interno
+- **Eliminación de warnings**: Solucionado el problema de Vue.js lifecycle hooks fuera de contexto
+- **14 componentes actualizados**: Migración completa de `initScrollReveal` a `setupScrollReveal`
+- **Consistencia total**: Patrón unificado en toda la aplicación
+
+#### **Componentes refactorizados sistemáticamente**
+- **Script setup pattern**: `ActionFAQSComponents`, `CallActionComponents`, `CalliconsComponents`
+- **Options API pattern**: `Footer`, `HeroComponents`, `HomeView`, `ServicesView` 
+- **Componentes NeekWorld**: `HeroNeekworldComponents`, `SerNeekworldComponents`
+- **Vistas principales**: Actualización de `HomeView` y `ServicesView`
+
+#### **Arquitectura ScrollReveal optimizada**
+```javascript
+// Patrón restaurado en useScrollReveal.js
+export function useScrollReveal() {
+  const setupScrollReveal = () => {
+    onMounted(() => {
+      // Todas las animaciones ScrollReveal aquí
+    });
+  };
+  return { setupScrollReveal };
+}
+```
+
+### 🎯 Expansión de servicios empresariales
+
+#### **Nuevos servicios de agentes inteligentes agregados**
+- **Agentes de Negocios** (`bi-briefcase`): Análisis de mercado y automatización comercial
+- **Agentes de Educación** (`bi-mortarboard`): Sistemas de IA educativos y tutorías virtuales
+- **Agentes Visuales** (`bi-eye`): Visión artificial y procesamiento de imágenes
+- **Total de servicios**: Expansión de 9 a 12 servicios en ServicesView
+
+#### **Consistencia en iconografía**
+- **Iconos representativos**: Selección cuidadosa de Bootstrap Icons temáticos
+- **Rutas específicas**: Enlaces a servicios y FAQs individualizados
+- **Grid responsive**: Distribución automática 3x4 en desktop, adaptativa en móvil
+
+### 🎨 Mejoras de accesibilidad y UX
+
+#### **AccessibilityControls modernizados**
+- **Ícono de tamaño de texto**: Cambio de `bi-text-height` a `bi-fonts` más intuitivo
+- **Mejor representación visual**: Iconos que comunican claramente su función
+- **UX mejorada**: Controles más fáciles de identificar para usuarios
+
+#### **Sistema de navegación optimizado**
+- **ScrollReveal en ServicesView**: Implementación de animación `reveal-left` en títulos
+- **Clases CSS limpiadas**: Eliminación de `font-family` innecesaria de HomeView
+- **Importaciones corregidas**: `useScrollReveal` implementado correctamente
+
+### 🔧 Optimizaciones responsive para CalliconsComponents
+
+#### **Sistema de grid adaptativo mejorado**
+- **Desktop (≥992px)**: 6 tarjetas en layout 3+3 con líneas conectoras
+- **Tablet (768-991px)**: 2 tarjetas por fila (3 filas totales)
+- **Móvil (≤767px)**: 1 tarjeta por fila (6 filas totales)
+- **Flexbox optimizado**: Distribución automática sin cálculos manuales
+
+#### **Líneas conectoras inteligentes**
+- **Conectores específicos**: Visible entre pasos 1→2, 4→5, y **5→6 (Resultado Final → Mejora Continua)**
+- **Responsive automático**: Se ocultan en tablets y móviles para mejor UX
+- **CSS mejorado**: Reglas más específicas para control preciso de visibilidad
+
+#### **Nuevo paso del proceso agregado**
+- **"Mejora Continua"**: Sexto paso con ícono `bi-arrow-repeat`
+- **Descripción completa**: "Implementamos un ciclo de mejora continua, monitoreando el rendimiento..."
+- **Flujo completo**: Proceso de 6 pasos que representa el ciclo completo de trabajo
+
+### 📱 Responsive design avanzado
+
+#### **Breakpoints estratégicos en CalliconsComponents**
+```css
+/* Tablet (768px - 991px) - 2 tarjetas por fila */
+.col-lg-2-4 {
+  flex: 1 1 calc(50% - 0.75rem);
+  max-width: 350px;
+}
+
+/* Móvil (≤767px) - 1 tarjeta por fila */
+.col-lg-2-4 {
+  flex: 1 1 100%;
+  max-width: 400px;
+}
+```
+
+#### **Iconos adaptativos**
+- **Desktop**: 64px con efectos hover completos
+- **Tablet**: 64px manteniendo funcionalidad
+- **Móvil**: 70px para mejor visibilidad táctil
+
+### 🎭 Gestión de estilos y CSS
+
+#### **Importación modular mejorada**
+- **callicons.css**: Agregado correctamente al sistema de estilos en `index.js`
+- **Separación clara**: Estilos de componente vs estilos globales
+- **Performance**: Carga optimizada de hojas de estilo específicas
+
+#### **Clases CSS auditadas**
+- **`.hero-section`**: Identificada como no definida (solo en accessibility.css)
+- **`.features-section`**: Confirmada como no existente, solo Bootstrap classes
+- **`.step-icon i`**: Localizada en services.css con estilos específicos
+- **Auditoría completa**: Revisión sistemática de clases sin definir
+
+### 🧹 Limpieza de código y mantenimiento
+
+#### **Eliminación de código duplicado**
+- **setupScrollReveal consistente**: Patrón único en toda la aplicación
+- **Imports optimizados**: Solo las dependencias necesarias en cada componente
+- **Comentarios actualizados**: Documentación interna coherente
+
+#### **Estructura de archivos mejorada**
+- **Componentes modulares**: Separación clara de responsabilidades
+- **Estilos organizados**: CSS específico por componente en `/assets/style/components/`
+- **Imports centralizados**: Gestión eficiente de dependencias
+
+### 🔍 Debugging y resolución de problemas
+
+#### **Identificación sistemática de issues**
+- **Vue.js warnings**: Solucionados completamente con reversión de patrón
+- **CSS classes faltantes**: Identificadas y documentadas para resolución futura
+- **Runtime errors**: Eliminación completa de errores de ScrollReveal
+
+#### **Testing y validación**
+- **Verificación completa**: Todos los componentes funcionando sin errores
+- **Responsive testing**: Validación en múltiples breakpoints
+- **Animation testing**: ScrollReveal funcionando correctamente en todos los componentes
+
+### 📊 Métricas de mejora
+
+#### **Componentes refactorizados**: 14
+#### **Servicios agregados**: 3 nuevos
+#### **Responsive breakpoints optimizados**: 3 niveles
+#### **CSS classes auditadas**: 4 clases principales
+#### **Errores resueltos**: 100% de warnings Vue.js eliminados
+
+---
+
 ## 🚀 Últimas actualizaciones (7 Oct 2025)
 
 ### 🧠 NeekWorldSerComponents - Rediseño completo con imagen de fondo

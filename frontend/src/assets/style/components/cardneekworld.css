@@ -6,17 +6,9 @@
 }
 
 .neekworld-card {
-  background: linear-gradient(
-    135deg,
-    #4a6cf7 0%,
-    #5b73f7 25%,
-    #6c7ff7 50%,
-    #7d8bf7 75%,
-    #8e97f7 100%
-  );
+  background: linear-gradient(135deg, #183772 0%, #173977 100%);
   border-radius: 20px;
-  padding: 3rem 2rem;
-  box-shadow: 0 20px 60px rgba(74, 108, 247, 0.3);
+  padding: 2rem 2rem;
   position: relative;
   overflow: hidden;
 }
@@ -24,7 +16,6 @@
 .neekworld-brain-container {
   position: relative;
   z-index: 2;
-  margin-bottom: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -103,7 +94,6 @@
 /* Efecto hover para interactividad */
 .neekworld-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 30px 80px rgba(74, 108, 247, 0.4);
   transition: all 0.3s ease;
 }
 

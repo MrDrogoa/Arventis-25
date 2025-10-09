@@ -2,29 +2,22 @@
 /* estilos de la seccion */
 .bg-computer {
   background: linear-gradient(135deg, #183772 0%, #173977 100%);
-  color: white;
-  position: relative;
-  overflow: hidden;
 }
 
 /* Círculo de fondo decorativo */
 .circle-bg {
-  position: absolute;
   top: -20%;
   left: -40%;
   width: 150%;
   height: 150%;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 50%;
-  z-index: 1;
 }
 
 /* estilos de imagen */
 .compu {
-  border-radius: 50%;
   object-fit: cover;
   aspect-ratio: 1;
-  z-index: 2;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 

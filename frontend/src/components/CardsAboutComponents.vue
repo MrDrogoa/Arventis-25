@@ -35,7 +35,9 @@ const values = ref([
         <div class="col-lg-4 col-md-6" v-for="(value, index) in values" :key="index">
           <div class="card h-100 border-0 shadow-sm feature-card">
             <div class="card-body p-4">
-              <div class="feature-icon step-icon bg-gradient text-white rounded-4 mb-3">
+              <div
+                class="fs-3 d-inline-flex align-items-center justify-content-center step-icon bg-gradient text-white rounded-4 mb-3"
+              >
                 <i :class="`bi ${value.icon}`"></i>
               </div>
               <h4 class="card-title h5">{{ value.title }}</h4>

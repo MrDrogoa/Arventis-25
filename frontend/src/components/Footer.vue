@@ -1,10 +1,10 @@
 <!-- Componente Footer.vue simple con información de contacto o derechos -->
-<!-- Usar <footer> con rol="contentinfo" y clases Bootstrap -->
+<!-- Footer con rol="contentinfo" y clases Bootstrap -->
 
 <template>
   <footer class="footer bg-dark text-light py-5" role="contentinfo">
     <div class="container">
-      <div class="row reveal-bottom-1">
+      <div class="row">
         <div class="col-md-4 mb-3 mb-md-0">
           <!-- Logo-footer -->
           <router-link to="/" class="d-block mb-3">
@@ -78,11 +78,15 @@ import { useScrollReveal } from "@/composables/useScrollReveal.js";
 // logo footer
 import imgFooter from "@/assets/img/logos/vertical.webp";
 
-// animacion de libreria scrollreveal
-const { setupScrollReveal } = useScrollReveal();
-setupScrollReveal();
 export default {
   name: "FooterComponent",
+  setup() {
+    // animacion de libreria scrollreveal
+    const { setupScrollReveal } = useScrollReveal();
+    setupScrollReveal();
+
+    return {};
+  },
   computed: {
     currentYear() {
       return new Date().getFullYear();

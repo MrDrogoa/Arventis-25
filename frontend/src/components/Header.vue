@@ -256,3 +256,7 @@ export default {
   },
 };
 </script>
+
+<style>
+@import "@/assets/style/components/header.css";
+</style>

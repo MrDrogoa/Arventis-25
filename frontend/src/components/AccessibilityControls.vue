@@ -1,35 +1,41 @@
 <template>
   <div class="accessibility-toolbar" role="region" aria-label="Controles de accesibilidad">
     <div class="btn-group" role="group" aria-label="Opciones de accesibilidad">
-      <button 
-        type="button" 
-        class="btn btn-sm btn-outline-secondary" 
-        @click="toggleRestMode" 
-        :class="{ 'active': isRestMode }"
+      <button
+        type="button"
+        class="btn btn-sm btn-outline-secondary"
+        @click="toggleRestMode"
+        :class="{ active: isRestMode }"
         :aria-pressed="isRestMode"
       >
-        <i class="bi bi-moon"></i>
-        <span class="ms-1 d-none d-md-inline">Descanso visual</span>
+        <i class="bi bi-eye"></i>
       </button>
-      
+
       <div class="btn-group" role="group">
-        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="bi bi-text-height"></i>
+        <button
+          type="button"
+          class="btn btn-sm btn-outline-secondary dropdown-toggle"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i class="bi bi-fonts"></i>
           <span class="ms-1 d-none d-md-inline">Tamaño de texto</span>
         </button>
         <ul class="dropdown-menu">
           <li><button class="dropdown-item" @click="setTextSize('normal')">Normal</button></li>
           <li><button class="dropdown-item" @click="setTextSize('large')">Grande</button></li>
           <li><button class="dropdown-item" @click="setTextSize('xlarge')">Muy grande</button></li>
-          <li><button class="dropdown-item" @click="setTextSize('xxlarge')">Extra grande</button></li>
+          <li>
+            <button class="dropdown-item" @click="setTextSize('xxlarge')">Extra grande</button>
+          </li>
         </ul>
       </div>
-      
-      <button 
-        type="button" 
-        class="btn btn-sm btn-outline-secondary" 
-        @click="toggleLegibility" 
-        :class="{ 'active': improvedLegibility }"
+
+      <button
+        type="button"
+        class="btn btn-sm btn-outline-secondary"
+        @click="toggleLegibility"
+        :class="{ active: improvedLegibility }"
         aria-pressed="false"
       >
         <i class="bi bi-type"></i>
@@ -41,12 +47,12 @@
 
 <script>
 export default {
-  name: 'AccessibilityControls',
+  name: "AccessibilityControls",
   data() {
     return {
       isRestMode: false,
-      textSize: 'normal',
-      improvedLegibility: false
+      textSize: "normal",
+      improvedLegibility: false,
     };
   },
   mounted() {
@@ -56,62 +62,62 @@ export default {
   methods: {
     toggleRestMode() {
       this.isRestMode = !this.isRestMode;
-      document.documentElement.classList.toggle('rest-mode', this.isRestMode);
+      document.documentElement.classList.toggle("rest-mode", this.isRestMode);
       this.savePreferences();
     },
     setTextSize(size) {
       // Primero eliminar todas las clases de tamaño
-      document.documentElement.classList.remove('text-large', 'text-xlarge', 'text-xxlarge');
-      
-      if (size !== 'normal') {
+      document.documentElement.classList.remove("text-large", "text-xlarge", "text-xxlarge");
+
+      if (size !== "normal") {
         document.documentElement.classList.add(`text-${size}`);
       }
-      
+
       this.textSize = size;
       this.savePreferences();
     },
     toggleLegibility() {
       this.improvedLegibility = !this.improvedLegibility;
-      document.documentElement.classList.toggle('improved-legibility', this.improvedLegibility);
+      document.documentElement.classList.toggle("improved-legibility", this.improvedLegibility);
       this.savePreferences();
     },
     savePreferences() {
       const preferences = {
         restMode: this.isRestMode,
         textSize: this.textSize,
-        improvedLegibility: this.improvedLegibility
+        improvedLegibility: this.improvedLegibility,
       };
-      localStorage.setItem('accessibilityPreferences', JSON.stringify(preferences));
+      localStorage.setItem("accessibilityPreferences", JSON.stringify(preferences));
     },
     loadPreferences() {
       try {
-        const savedPrefs = localStorage.getItem('accessibilityPreferences');
+        const savedPrefs = localStorage.getItem("accessibilityPreferences");
         if (savedPrefs) {
           const prefs = JSON.parse(savedPrefs);
-          
+
           // Aplicar modo descanso si estaba guardado
           if (prefs.restMode) {
             this.isRestMode = true;
-            document.documentElement.classList.add('rest-mode');
+            document.documentElement.classList.add("rest-mode");
           }
-          
+
           // Aplicar tamaño de texto
-          if (prefs.textSize && prefs.textSize !== 'normal') {
+          if (prefs.textSize && prefs.textSize !== "normal") {
             this.textSize = prefs.textSize;
             document.documentElement.classList.add(`text-${prefs.textSize}`);
           }
-          
+
           // Aplicar legibilidad mejorada
           if (prefs.improvedLegibility) {
             this.improvedLegibility = true;
-            document.documentElement.classList.add('improved-legibility');
+            document.documentElement.classList.add("improved-legibility");
           }
         }
       } catch (e) {
-        console.error('Error al cargar preferencias de accesibilidad:', e);
+        console.error("Error al cargar preferencias de accesibilidad:", e);
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -17,11 +17,12 @@
 
     <!-- Sección de NeekWorld -->
     <NeekWorldSerComponents />
+
     <section class="services-section py-5">
       <div class="container">
         <div class="row mb-5">
           <div class="col-lg-8 mx-auto text-center">
-            <h2 class="mb-3 fw-bold display-6">
+            <h2 class="mb-3 fw-bold display-6 reveal-left">
               <span class="text-primary">Soluciones</span> integrales
             </h2>
             <p class="mb-4 fw-medium card-text w-75 mx-auto">
@@ -56,9 +57,17 @@ import HeroServiceComponents from "@/components/HeroServiceComponents.vue";
 import HeroSerComponents from "@/components/HeroSerComponents.vue";
 import SerAcComponents from "@/components/SerAcComponents.vue";
 import NeekWorldSerComponents from "@/components/NeekWorldSerComponents.vue";
+import { useScrollReveal } from "@/composables/useScrollReveal.js";
 
 export default {
   name: "ServicesView",
+  setup() {
+    // animacion de libreria scrollreveal
+    const { setupScrollReveal } = useScrollReveal();
+    setupScrollReveal();
+
+    return {};
+  },
   components: {
     ServiceCard,
     HeroServiceComponents,
@@ -140,6 +149,30 @@ export default {
             "Optimización para motores de búsqueda que mejora la visibilidad de su sitio web y atrae tráfico orgánico de calidad.",
           linkTo: "/services/seo",
           forumLink: "/faq/seo-positioning",
+        },
+        {
+          icon: "bi-briefcase",
+          title: "Agentes de Negocios",
+          description:
+            "Agentes inteligentes especializados en análisis de mercado, gestión de clientes y automatización de procesos comerciales para optimizar su estrategia empresarial.",
+          linkTo: "/services/business-agents",
+          forumLink: "/faq/business-agents",
+        },
+        {
+          icon: "bi-mortarboard",
+          title: "Agentes de Educación",
+          description:
+            "Sistemas de IA educativos que personalizan el aprendizaje, crean contenido adaptativo y proporcionan tutorías virtuales inteligentes.",
+          linkTo: "/services/education-agents",
+          forumLink: "/faq/education-agents",
+        },
+        {
+          icon: "bi-eye",
+          title: "Agentes Visuales",
+          description:
+            "Tecnología de visión artificial y análisis de imágenes para reconocimiento, procesamiento visual y automatización basada en contenido visual.",
+          linkTo: "/services/visual-agents",
+          forumLink: "/faq/visual-agents",
         },
       ],
     };

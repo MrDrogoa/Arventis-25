@@ -21,6 +21,10 @@
   transition: background-color 0.3s, color 0.3s;
 }
 
+.rest-mode .bg-secneek {
+  background-color: var(--bg-color);
+}
+
 /* Encabezados */
 .rest-mode h1,
 .rest-mode h2,

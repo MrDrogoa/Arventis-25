@@ -3,7 +3,7 @@ import Neek from "@/assets/img/neekworld.png";
 </script>
 
 <template>
-  <section class="neekworld-section py-5">
+  <section class="neekworld-section mb-5">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8 col-md-10">
@@ -12,11 +12,21 @@ import Neek from "@/assets/img/neekworld.png";
               <img :src="Neek" alt="NeekWorld Brain" class="neekworld-brain-image" />
             </div>
             <div class="neekworld-content-overlay">
-              <h2 class="mb-3 fw-bold">Descubre NeekWorld</h2>
-              <p class="mb-lg-0 text-white opacity-90 w-75 m-0">
-                Sumérgete en NeekWorld, nuestro innovador espacio virtual diseñado para la educación
-                y la colaboración en línea.
-              </p>
+              <h2 class="my-2 fw-bold text-center text-lg-start">Descubre NeekWorld</h2>
+              <div
+                class="d-flex flex-column flex-lg-row align-items-center gap-3 gap-lg-4 justify-content-between"
+              >
+                <p class="mb-lg-0 text-white text-center text-lg-start opacity-90 w-75 m-0">
+                  Sumérgete en NeekWorld, nuestro innovador espacio virtual diseñado para la
+                  educación y la colaboración en línea.
+                </p>
+                <router-link
+                  :to="{ path: '/neekworld' }"
+                  class="btn btn-sm link-hero text-decoration-none fw-semibold"
+                >
+                  ir a NeekWorld
+                </router-link>
+              </div>
             </div>
           </div>
         </div>

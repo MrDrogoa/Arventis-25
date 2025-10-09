@@ -15,13 +15,17 @@ import "./components/miviva.css";
 import "./components/herofaqs.css";
 import "./components/herocontact.css";
 import "./components/team.css";
-import "./components/neekworld.css";
+import "./components/cardneekworld.css";
+import "./components/heroneekworld.css";
+import "./components/serneekworld.css";
+import "./components/textimgneekworld.css";
 
 // Importar estilos de vistas
 import "./views/home.css";
 import "./views/about.css";
 import "./views/services.css";
 import "./views/contact.css";
+import "./views/neekworld.css";
 import "./views/not-found.css";
 
 // Estilos de accesibilidad

@@ -49,15 +49,15 @@ const missionVisionValues = [
           class="col-md-3 text-center mb-4 mb-md-0 miviva-card-container"
         >
           <div class="mission-step position-relative">
-            <div class="mission-icon mx-auto mb-3 rounded-circle reveal-bottom">
+            <div class="mission-icon mx-auto mb-3 rounded-circle reveal-bottom-1">
               <i :class="`bi ${item.icon} fs-3 text-white`"></i>
             </div>
             <div
               v-if="index < missionVisionValues.length - 1"
               class="mission-connector d-none d-lg-block"
             ></div>
-            <h5 class="fw-bold mb-2 mission-title reveal-bottom">{{ item.title }}</h5>
-            <p class="text-muted small px-2 reveal-bottom">
+            <h5 class="fw-bold mb-2 mission-title reveal-bottom-1">{{ item.title }}</h5>
+            <p class="text-muted small px-2 reveal-bottom-1">
               {{ item.description }}
             </p>
           </div>

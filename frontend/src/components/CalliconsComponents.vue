@@ -42,6 +42,13 @@ const processSteps = [
     description:
       "Entregamos soluciones funcionales completamente probadas y optimizadas proporcionando soporte continuo.",
   },
+  {
+    id: 6,
+    icon: "bi-arrow-repeat",
+    title: "Mejora Continua",
+    description:
+      "Implementamos un ciclo de mejora continua, monitoreando el rendimiento y actualizando las soluciones según las necesidades cambiantes.",
+  },
 ];
 </script>
 <template>
@@ -50,28 +57,28 @@ const processSteps = [
       <!-- Título de la sección -->
       <div class="text-center mb-5">
         <p class="text-muted text-uppercase fw-medium mb-2">// Nuestro Proceso de Trabajo</p>
-        <h2 class="display-6 fw-bold">
+        <h2 class="display-6 fw-bold mb-3 w-50 mx-auto">
           Nuestro <span class="text-primary">Proceso de Trabajo</span> Probado
         </h2>
       </div>
 
       <!-- Proceso dinámico -->
-      <div class="row justify-content-center">
+      <div class="row justify-content-center py-2">
         <div
           v-for="(step, index) in processSteps"
           :key="step.id"
           class="col-6 col-lg-2-4 col-md-3 text-center mb-0 mb-md-2"
         >
-          <div class="process-step position-relative">
-            <div class="step-icon mx-auto mb-3 rounded-circle reveal-bottom">
+          <div class="process-step d-flex flex-column align-items-center position-relative">
+            <div class="step-icon mx-auto mb-3 rounded-circle reveal-bottom-1">
               <i :class="`bi ${step.icon} fs-3 text-white`"></i>
             </div>
             <div
               v-if="index < processSteps.length - 1"
               class="step-connector d-none d-lg-block"
             ></div>
-            <h5 class="fw-bold mb-2 title-icon reveal-bottom">{{ step.title }}</h5>
-            <p class="text-muted small px-2 reveal-bottom">
+            <h5 class="fw-bold mb-2 title-icon reveal-bottom-1">{{ step.title }}</h5>
+            <p class="text-muted small px-2 reveal-bottom-1">
               {{ step.description }}
             </p>
           </div>

@@ -4,7 +4,7 @@ import LogoTr from "@/assets/img/logos/transparente.webp";
 import { useScrollReveal } from "@/composables/useScrollReveal.js";
 
 export default {
-  name: "HeroComponents",
+  name: "HomeHeroComponents",
   setup() {
     // animacion de libreria scrollreveal
     const { setupScrollReveal } = useScrollReveal();

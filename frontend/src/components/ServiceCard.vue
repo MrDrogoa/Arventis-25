@@ -5,7 +5,9 @@
 <template>
   <div class="card service-card h-100 border-0 shadow-sm">
     <div class="card-body p-4">
-      <div class="step-icon mb-3 rounded-4">
+      <div
+        class="fs-3 d-inline-flex align-items-center justify-content-center step-icon bg-gradient text-white rounded-4 mb-3"
+      >
         <i :class="`bi ${icon}`"></i>
       </div>
       <h3 class="card-title h5 fw-medium">{{ title }}</h3>

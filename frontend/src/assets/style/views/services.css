@@ -3,20 +3,6 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 /* Icono de servicio */
-.step-icon {
-  width: 64px;
-  height: 64px;
-  background-color: #08b2f7;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 15px rgba(8, 178, 247, 0.3);
-  transition: all 0.3s ease;
-}
-.step-icon i {
-  font-size: 1.75rem;
-  color: #fff;
-}
 
 .services-section {
   background-color: #fff;

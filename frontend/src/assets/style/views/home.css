@@ -40,18 +40,6 @@
   background-color: #0691d9 !important;
 }
 
-/* Call to Action section */
-
-.feature-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 64px;
-  height: 64px;
-  font-size: 1.75rem;
-  margin-bottom: 1rem;
-}
-
 .feature-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }

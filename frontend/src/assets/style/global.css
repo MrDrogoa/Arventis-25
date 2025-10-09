@@ -53,3 +53,10 @@ a:hover {
   outline: 3px solid rgba(13, 110, 253, 0.25);
   outline-offset: 2px;
 }
+
+.step-icon {
+  width: 64px;
+  height: 64px;
+  background-color: #08b2f7;
+  box-shadow: 0 4px 15px rgba(8, 178, 247, 0.3);
+}
