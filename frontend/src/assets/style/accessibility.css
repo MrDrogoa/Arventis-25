@@ -4,6 +4,7 @@
 .rest-mode {
   --bg-color: #f0ebe1; /* Fondo beige suave */
   --text-color: #333333; /* Texto oscuro pero no negro puro */
+  --hover-text-color: #fff; /* Texto atenuado */
   --heading-color: #a29e9e; /* Encabezados ligeramente más oscuros */
   --link-color: #0d548a; /* Enlaces azul oscuro, menos intenso */
   --primary-bg: #5d8ba3; /* Azul apagado en lugar de azul brillante */
@@ -43,6 +44,22 @@
 .rest-mode a:hover {
   color: var(--link-color);
   opacity: 0.8;
+}
+
+.rest-mode .link-des {
+  border-color: var(--link-color);
+}
+
+.rest-mode .link-des:hover {
+  border-color: var(--primary-bg);
+  color: var(--hover-text-color);
+  background-color: var(--primary-bg) !important;
+}
+
+.rest-mode .social-link:hover {
+  background-color: var(--primary-bg) !important;
+  border-color: var(--primary-bg) !important;
+  color: #fff !important;
 }
 
 /* Áreas de navegación */

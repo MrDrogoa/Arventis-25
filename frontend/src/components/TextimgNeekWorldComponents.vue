@@ -31,7 +31,10 @@ import Student from "@/assets/img/student.webp";
           <!-- Lista numerada de beneficios -->
           <div class="process-steps mb-4">
             <div class="step-item d-flex align-items-start mb-3 reveal-right-1">
-              <span class="step-number me-3">1</span>
+              <span
+                class="step-number d-inline-flex justify-content-center align-items-center rounded-circle fw-bold fs-5 me-3"
+                >1</span
+              >
               <div>
                 <h5 class="fw-bold mb-1">Inmersión Total</h5>
                 <p class="text-light opacity-75 mb-0 small">
@@ -41,7 +44,10 @@ import Student from "@/assets/img/student.webp";
             </div>
 
             <div class="step-item d-flex align-items-start mb-3 reveal-right-2">
-              <span class="step-number me-3">2</span>
+              <span
+                class="step-number d-inline-flex justify-content-center align-items-center rounded-circle fw-bold fs-5 me-3"
+                >2</span
+              >
               <div>
                 <h5 class="fw-bold mb-1">Aprendizaje Interactivo</h5>
                 <p class="text-light opacity-75 mb-0 small">
@@ -51,7 +57,10 @@ import Student from "@/assets/img/student.webp";
             </div>
 
             <div class="step-item d-flex align-items-start mb-3 reveal-right-3">
-              <span class="step-number me-3">3</span>
+              <span
+                class="step-number d-inline-flex justify-content-center align-items-center rounded-circle fw-bold fs-5 me-3"
+                >3</span
+              >
               <div>
                 <h5 class="fw-bold mb-1">Colaboración Global</h5>
                 <p class="text-light opacity-75 mb-0 small">
@@ -61,7 +70,10 @@ import Student from "@/assets/img/student.webp";
             </div>
 
             <div class="step-item d-flex align-items-start mb-3 reveal-right-4">
-              <span class="step-number me-3">4</span>
+              <span
+                class="step-number d-inline-flex justify-content-center align-items-center rounded-circle fw-bold fs-5 me-3"
+                >4</span
+              >
               <div>
                 <h5 class="fw-bold mb-1">Accesibilidad Universal</h5>
                 <p class="text-light opacity-75 mb-0 small">

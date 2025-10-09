@@ -1,34 +1,11 @@
-/* CTA Overlay Section */
-.cta-overlay-section {
-  z-index: 10;
-}
-
 .cta-overlay-box {
   background: linear-gradient(135deg, #183772 0%, #173977 100%);
-  border-radius: 20px;
-  padding: 3rem 2rem;
-  margin: 0 1rem;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Puntos decorativos */
-.dots-pattern {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  z-index: 1;
 }
 
 .dot {
-  position: absolute;
   width: 8px;
   height: 8px;
   background-color: rgba(255, 255, 255, 0.15);
-  border-radius: 50%;
 }
 
 /* Posicionamiento de puntos */
@@ -133,12 +110,6 @@
   background-color: rgba(255, 255, 255, 0.18);
 }
 
-/* Asegurar que el contenido esté por encima */
-.cta-overlay-box .container {
-  position: relative;
-  z-index: 2;
-}
-
 /* Estilos para el botón */
 .cta-overlay-box .btn-light {
   border: none;
@@ -152,27 +123,15 @@
   box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
 }
 
-/* Fondo blanco para la sección de servicio */
-.bg-ser {
-  background-color: #fff;
-}
-
 /* Responsive para dispositivos móviles */
 @media (min-width: 992px) {
   .cta-overlay-box {
-    margin: 0 auto;
     max-width: 1200px;
-    padding: 4rem 4rem;
   }
 }
 
 /* Responsive para dispositivos móviles */
 @media (max-width: 767px) {
-  .cta-overlay-box {
-    padding: 2rem 1.5rem;
-    border-radius: 15px;
-  }
-
   .dot {
     width: 6px;
     height: 6px;
@@ -192,10 +151,5 @@
   .dot-17 {
     width: 7px;
     height: 7px;
-  }
-
-  .cta-overlay-box {
-    margin: 0 2rem;
-    padding: 4rem 3rem;
   }
 }

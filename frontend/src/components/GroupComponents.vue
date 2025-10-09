@@ -75,27 +75,29 @@ const team = ref([
 
     <div class="row g-4">
       <div class="col-md-6 col-lg-3" v-for="(member, index) in team" :key="index">
-        <div class="card team-card h-100 border-0 shadow-sm">
-          <div class="team-image-container">
+        <div class="card overflow-hidden rounded-4 team-card h-100 border-0 shadow-sm">
+          <div class="team-image-container position-relative overflow-hidden">
             <img
               :src="member.image"
               :alt="`Fotografía de ${member.name}, ${member.position}`"
               class="card-img-top team-image img-fluid"
             />
           </div>
-          <div class="card-body card-team text-center d-flex flex-column">
+          <div class="card-body text-center d-flex flex-column">
             <div class="flex-grow-1">
               <h3 class="card-title h5 mb-2 fw-semibold">{{ member.name }}</h3>
               <p class="card-subtitle text-primary fw-medium mt-1">{{ member.position }}</p>
               <div class="border border-info w-75 my-3 mx-auto"></div>
               <p class="card-text small text-muted">{{ member.bio }}</p>
             </div>
-            <div class="social-links mt-auto pt-3">
+            <div
+              class="social-links d-flex justify-content-center align-items-center gap-2 mt-auto pt-3"
+            >
               <a
                 v-for="(social, idx) in member.social"
                 :key="idx"
                 :href="social.url"
-                class="social-link me-2 text-secondary"
+                class="social-link d-inline-flex justify-content-center align-items-center rounded-circle text-decoration-none me-2 text-secondary"
                 :aria-label="`${member.name} en ${social.name}`"
                 target="_blank"
                 rel="noopener noreferrer"

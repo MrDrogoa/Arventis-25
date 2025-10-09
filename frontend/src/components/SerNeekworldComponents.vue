@@ -53,20 +53,24 @@ const neekworldServices = [
 </script>
 
 <template>
-  <section class="serneekworld-section py-5">
+  <section class="py-5">
     <div class="container">
-      <div class="row">
+      <div class="row g-4">
         <!-- Primera fila: 3 tarjetas -->
         <div
           class="col-lg-4 col-md-6 mb-4"
           v-for="service in neekworldServices.slice(0, 6)"
           :key="service.id"
         >
-          <div class="neekworld-service-card card h-100">
-            <div class="service-icon-container">
+          <div
+            class="card h-100 border-0 shadow-sm feature-card neekworld-service-card p-4 align-items-center text-center"
+          >
+            <div
+              class="service-icon-container rounded-circle d-flex align-items-center justify-content-center mb-4"
+            >
               <i :class="service.icon" class="service-icon text-white"></i>
             </div>
-            <div class="service-content">
+            <div class="d-flex align-items-center flex-column">
               <h4 class="service-title card-title h5 fw-medium mb-2">{{ service.title }}</h4>
               <p class="card-text">{{ service.description }}</p>
             </div>

@@ -1,26 +1,8 @@
-/* Tarjetas de servicios */
-.neekworld-service-card {
-  border-radius: 15px;
-  padding: 2rem 1.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
 /* Contenedor de iconos */
 .service-icon-container {
   width: 80px;
   height: 80px;
   background: linear-gradient(135deg, #4a6cf7 0%, #6c7ff7 100%);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.5rem;
   box-shadow: 0 8px 25px rgba(74, 108, 247, 0.3);
   transition: all 0.3s ease;
 }
@@ -31,68 +13,9 @@
 
 .neekworld-service-card:hover .service-icon-container {
   transform: scale(1.1);
-  /* box-shadow: 0 12px 35px rgba(74, 108, 247, 0.4); */
 }
 
-/* Contenido de las tarjetas */
-.service-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-/* Responsive Design */
-@media (max-width: 991px) {
-  .arrow-right,
-  .arrow-left,
-  .row-connector {
-    display: none !important;
-  }
-
-  .neekworld-service-card {
-    margin-bottom: 2rem;
-    min-height: 250px;
-  }
-
-  .service-icon-container {
-    width: 70px;
-    height: 70px;
-  }
-
-  .service-icon {
-    font-size: 1.8rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .neekworld-service-card {
-    padding: 1.5rem 1rem;
-    min-height: 220px;
-  }
-
-  .service-icon-container {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 1rem;
-  }
-
-  .service-icon {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .serneekworld-section {
-    padding: 3rem 0;
-  }
-
-  .neekworld-service-card {
-    padding: 1.5rem;
-    min-height: 200px;
-  }
-}
-
+/* Efecto hover en el título del servicio */
 .neekworld-service-card:hover .service-title {
   color: #4a6cf7;
   transition: color 0.3s ease;

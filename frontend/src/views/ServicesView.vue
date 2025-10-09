@@ -18,7 +18,8 @@
     <!-- Sección de NeekWorld -->
     <NeekWorldSerComponents />
 
-    <section class="services-section py-5">
+    <!-- Sección de servicios principales -->
+    <section class="services-section position-relative overflow-hidden py-5">
       <div class="container">
         <div class="row mb-5">
           <div class="col-lg-8 mx-auto text-center">

@@ -33,7 +33,7 @@ const missionVisionValues = [
 
 <template>
   <section>
-    <div class="container pt-5">
+    <div class="container py-5">
       <!-- Título de la sección -->
       <div class="text-center mb-5">
         <h2 class="display-6 fw-bold">
@@ -42,22 +42,24 @@ const missionVisionValues = [
       </div>
 
       <!-- Misión, Visión y Valores dinámico -->
-      <div class="row justify-content-center">
+      <div class="row justify-content-center py-2">
         <div
           v-for="(item, index) in missionVisionValues"
           :key="item.id"
-          class="col-md-3 text-center mb-4 mb-md-0 miviva-card-container"
+          class="col-6 col-md-3 miviva-content text-center mb-0 mb-md-2"
         >
-          <div class="mission-step position-relative">
-            <div class="mission-icon mx-auto mb-3 rounded-circle reveal-bottom-1">
+          <div class="d-flex flex-column align-items-center position-relative">
+            <div
+              class="step-icon d-flex align-items-center justify-content-center mx-auto mb-3 rounded-circle reveal-bottom-1"
+            >
               <i :class="`bi ${item.icon} fs-3 text-white`"></i>
             </div>
             <div
               v-if="index < missionVisionValues.length - 1"
-              class="mission-connector d-none d-lg-block"
+              class="mission-connector step-connector position-absolute z-index-1 d-none d-lg-block"
             ></div>
-            <h5 class="fw-bold mb-2 mission-title reveal-bottom-1">{{ item.title }}</h5>
-            <p class="text-muted small px-2 reveal-bottom-1">
+            <h5 class="fw-bold mb-2 title-icon reveal-bottom-1">{{ item.title }}</h5>
+            <p class="text-muted small px-2 flex-grow-1 reveal-bottom-1">
               {{ item.description }}
             </p>
           </div>

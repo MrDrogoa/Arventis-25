@@ -13,10 +13,6 @@
 
 /* Contenedor de imagen uniforme */
 .team-image-container {
-  width: 100%;
-  height: 280px;
-  overflow: hidden;
-  position: relative;
   background-color: #f8f9fa;
 }
 
@@ -32,52 +28,19 @@
   transform: scale(1.05);
 }
 
-/* Social Links mejorados */
-.social-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-}
-
 .social-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   width: 36px;
   height: 36px;
-  border-radius: 50%;
-  background-color: #f8f9fa;
-  color: #6c757d;
-  text-decoration: none;
-  font-size: 1.1rem;
   transition: all 0.3s ease;
   border: 1px solid #e9ecef;
 }
 
-.social-link:hover,
-.social-links a:hover {
+.social-link:hover {
   background-color: #0d6efd !important;
   color: white !important;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
   border-color: #0d6efd;
-}
-
-/* Fallback para estilos antiguos */
-.social-links a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background-color: #f8f9fa;
-  transition: all 0.3s ease;
-  border: 1px solid #e9ecef;
-  text-decoration: none;
-  color: #6c757d;
-  font-size: 1.1rem;
 }
 
 /* Value Cards */
@@ -99,16 +62,6 @@
 .value-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-/* Stats Section */
-.stats-section {
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.stat-item {
-  padding: 20px;
 }
 
 /* Responsividad para imágenes del equipo */

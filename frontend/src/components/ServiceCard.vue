@@ -3,7 +3,7 @@
 <!-- Accesible, con rol y aria-label si es necesario -->
 
 <template>
-  <div class="card service-card h-100 border-0 shadow-sm">
+  <div class="card h-100 border-0 shadow-sm feature-card">
     <div class="card-body p-4">
       <div
         class="fs-3 d-inline-flex align-items-center justify-content-center step-icon bg-gradient text-white rounded-4 mb-3"
@@ -15,7 +15,7 @@
       <div class="mt-auto">
         <router-link
           :to="{ path: '/contact', query: { subject: `Consulta sobre ${title}` } }"
-          class="btn btn-sm btn-outline-primary text-decoration-none"
+          class="btn btn-sm btn-outline-primary text-decoration-none link-des"
         >
           Solicitar Información
         </router-link>
@@ -55,28 +55,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.service-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
-}
-
-@media (max-width: 576px) {
-  .service-icon {
-    width: 50px;
-    height: 50px;
-  }
-
-  .service-icon i {
-    font-size: 1.5rem;
-  }
-
-  .service-card .card-title {
-    font-size: 1.125rem;
-  }
-}
-</style>
+<style scoped></style>

@@ -6,14 +6,14 @@ import Oficina from "@/assets/img/oficina.webp";
   <section class="container">
     <div class="row align-items-center mb-5">
       <div class="col-lg-6 mb-0 mb-lg-4">
-        <div class="image-container-1 position-relative">
+        <div class="image-container-1 position-relative overflow-hidden">
           <!-- imagen de la oficina -->
-          <img :src="Oficina" alt="Oficina Arventis" class="img-fluid rounded office-image-1" />
+          <img :src="Oficina" alt="Oficina Arventis" class="img-fluid rounded-4" />
           <div class="image-overlay-1"></div>
         </div>
       </div>
       <div class="col-lg-6">
-        <div class="px-0 px-lg-3 paragraph-history">
+        <div class="px-0 px-lg-3 text-lg-start text-center py-3 py-lg-0">
           <!-- Título de la historia -->
           <h2 class="mb-3 fw-bold display-6 reveal-right-2">Nuestra Historia</h2>
           <!-- Descripción de la historia -->

@@ -11,7 +11,6 @@
   width: 150%;
   height: 150%;
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 50%;
 }
 
 /* estilos de imagen */
@@ -23,25 +22,8 @@
 
 /* Estilos para los números de pasos */
 .step-number {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   width: 35px;
   height: 35px;
   background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  font-weight: bold;
-  font-size: 1.1rem;
-  color: white;
   flex-shrink: 0;
 }
-
-.step-item {
-  transition: transform 0.2s ease;
-}
-
-.step-item:hover {
-  transform: translateX(5px);
-}
-
-/* Responsive adjustments */

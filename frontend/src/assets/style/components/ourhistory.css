@@ -2,16 +2,7 @@
 
 /* Contenedor de imagen con overlay */
 .image-container-1 {
-  overflow: hidden;
-  border-radius: 0.5rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Imagen principal */
-.office-image-1 {
-  width: 100%;
-  height: auto;
-  transition: transform 0.3s ease;
 }
 
 /* Overlay con gradiente blanco */
@@ -57,20 +48,7 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 992px) {
-  .paragraph-history {
-    padding-top: 1rem;
-  }
-}
 @media (max-width: 768px) {
-  .image-container-1 {
-    margin-bottom: 2rem;
-  }
-
-  .paragraph-history {
-    padding-top: 0;
-  }
-
   .image-overlay-1::before {
     animation-duration: 4s;
   }

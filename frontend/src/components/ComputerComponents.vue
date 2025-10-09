@@ -13,7 +13,7 @@ setupScrollReveal();
         <!-- Imagen circular a la izquierda -->
         <div class="col-lg-5 text-center mb-4 mb-lg-0">
           <div class="position-relative d-inline-block">
-            <div class="circle-bg position-absolute z-1"></div>
+            <div class="circle-bg position-absolute z-1 rounded-circle"></div>
             <img
               :src="Computer"
               alt="Soluciones tecnológicas Arventis"
@@ -32,9 +32,12 @@ setupScrollReveal();
           </p>
 
           <!-- Lista numerada de pasos -->
-          <div class="process-steps mb-4">
-            <div class="step-item d-flex align-items-start mb-3 reveal-right-1">
-              <span class="step-number me-3">1</span>
+          <div class="mb-4">
+            <div class="d-flex align-items-start mb-3 reveal-right-1">
+              <span
+                class="step-number d-inline-flex justify-content-center align-items-center rounded-circle fw-bold fs-5 me-3"
+                >1</span
+              >
               <div>
                 <h5 class="fw-bold mb-1">Consulta inicial</h5>
                 <p class="text-light opacity-75 mb-0 small">
@@ -43,8 +46,11 @@ setupScrollReveal();
               </div>
             </div>
 
-            <div class="step-item d-flex align-items-start mb-3 reveal-right-2">
-              <span class="step-number me-3">2</span>
+            <div class="d-flex align-items-start mb-3 reveal-right-2">
+              <span
+                class="step-number d-inline-flex justify-content-center align-items-center rounded-circle fw-bold fs-5 me-3"
+                >2</span
+              >
               <div>
                 <h5 class="fw-bold mb-1">Planificación</h5>
                 <p class="text-light opacity-75 mb-0 small">
@@ -53,8 +59,11 @@ setupScrollReveal();
               </div>
             </div>
 
-            <div class="step-item d-flex align-items-start mb-3 reveal-right-3">
-              <span class="step-number me-3">3</span>
+            <div class="d-flex align-items-start mb-3 reveal-right-3">
+              <span
+                class="step-number d-inline-flex justify-content-center align-items-center rounded-circle fw-bold fs-5 me-3"
+                >3</span
+              >
               <div>
                 <h5 class="fw-bold mb-1">Implementación</h5>
                 <p class="text-light opacity-75 mb-0 small">
@@ -63,8 +72,11 @@ setupScrollReveal();
               </div>
             </div>
 
-            <div class="step-item d-flex align-items-start mb-3 reveal-right-4">
-              <span class="step-number me-3">4</span>
+            <div class="d-flex align-items-start mb-3 reveal-right-4">
+              <span
+                class="step-number d-inline-flex justify-content-center align-items-center rounded-circle fw-bold fs-5 me-3"
+                >4</span
+              >
               <div>
                 <h5 class="fw-bold mb-1">Soporte continuo</h5>
                 <p class="text-light opacity-75 mb-0 small">

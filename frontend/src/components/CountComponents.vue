@@ -1,15 +1,15 @@
 <template>
   <section>
-    <article class="stats-section py-5 bg-light">
+    <article class="py-5 bg-light">
       <div class="container">
         <div class="row text-center">
           <div class="col-6 col-md-3 mb-4 mb-md-0" v-for="(stat, index) in stats" :key="index">
-            <div class="stat-item">
-              <h2 class="display-4 fw-bold text-primary">
-                {{ animatedValues[index] }}{{ stat.suffix }}
-              </h2>
-              <p class="mb-0 fw-medium">{{ stat.label }}</p>
-            </div>
+            <!-- Contador de estadísticas -->
+            <h2 class="display-4 fw-bold text-primary">
+              {{ animatedValues[index] }}{{ stat.suffix }}
+            </h2>
+            <!-- Descripción del contador -->
+            <p class="mb-0 fw-medium">{{ stat.label }}</p>
           </div>
         </div>
       </div>

@@ -1,34 +1,18 @@
 /* NeekWorld Component - Diseño basado en la imagen de referencia */
 
-.neekworld-section {
-  display: flex;
-  align-items: center;
-}
-
 .neekworld-card {
   background: linear-gradient(135deg, #183772 0%, #173977 100%);
-  border-radius: 20px;
-  padding: 2rem 2rem;
-  position: relative;
-  overflow: hidden;
 }
 
-.neekworld-brain-container {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
+/* Imagen del cerebro de NeekWorld */
 .neekworld-brain-image {
   width: 120px;
   height: 120px;
-  object-fit: contain;
   filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
   animation: brainGlow 3s ease-in-out infinite alternate;
 }
 
+/* Animación de resplandor */
 @keyframes brainGlow {
   0% {
     filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2)) brightness(1);
@@ -38,41 +22,8 @@
   }
 }
 
-.neekworld-content-overlay {
-  position: relative;
-  z-index: 2;
-  color: white;
-}
-
-/* Efectos adicionales para replicar exactamente la imagen */
-.neekworld-card::after {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at center, transparent 40%, rgba(255, 255, 255, 0.02) 70%);
-  animation: rotate 20s linear infinite;
-  pointer-events: none;
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
-  .neekworld-card {
-    padding: 2rem 1.5rem;
-    min-height: 300px;
-  }
-
   .neekworld-brain-image {
     width: 100px;
     height: 100px;
@@ -80,40 +31,13 @@
 }
 
 @media (max-width: 576px) {
-  .neekworld-card {
-    padding: 1.5rem 1rem;
-    margin: 0 1rem;
-  }
-
   .neekworld-brain-image {
     width: 80px;
     height: 80px;
   }
 }
 
-/* Efecto hover para interactividad */
-.neekworld-card:hover {
-  transform: translateY(-5px);
-  transition: all 0.3s ease;
-}
-
 .neekworld-card:hover .neekworld-brain-image {
   transform: scale(1.05);
   transition: transform 0.3s ease;
-}
-
-/* Animación de entrada */
-.neekworld-card {
-  animation: fadeInUp 0.8s ease forwards;
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }

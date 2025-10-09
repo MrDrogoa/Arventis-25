@@ -69,16 +69,18 @@ const processSteps = [
           :key="step.id"
           class="col-6 col-lg-2-4 col-md-3 text-center mb-0 mb-md-2"
         >
-          <div class="process-step d-flex flex-column align-items-center position-relative">
-            <div class="step-icon mx-auto mb-3 rounded-circle reveal-bottom-1">
+          <div class="d-flex flex-column align-items-center position-relative">
+            <div
+              class="step-icon d-flex align-items-center justify-content-center mx-auto mb-3 rounded-circle reveal-bottom-1"
+            >
               <i :class="`bi ${step.icon} fs-3 text-white`"></i>
             </div>
             <div
               v-if="index < processSteps.length - 1"
-              class="step-connector d-none d-lg-block"
+              class="step-connector position-absolute z-index-1 d-none d-lg-block"
             ></div>
             <h5 class="fw-bold mb-2 title-icon reveal-bottom-1">{{ step.title }}</h5>
-            <p class="text-muted small px-2 reveal-bottom-1">
+            <p class="text-muted small px-2 flex-grow-1 reveal-bottom-1">
               {{ step.description }}
             </p>
           </div>

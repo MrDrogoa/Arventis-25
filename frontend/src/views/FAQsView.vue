@@ -26,7 +26,10 @@
           <div class="col-lg-8 mx-auto">
             <div class="d-flex justify-content-between align-items-center mb-4">
               <h2 class="display-6 fw-bold">{{ getCategoryName() }}</h2>
-              <router-link to="/faq" class="btn btn-outline-primary btn-sm text-decoration-none">
+              <router-link
+                to="/faq"
+                class="btn btn-outline-primary btn-sm text-decoration-none link-des"
+              >
                 <i class="bi bi-arrow-left me-1"></i> Todas las categorías
               </router-link>
             </div>
@@ -66,6 +69,7 @@
       </div>
     </section>
 
+    <!-- Componente de Acción para la sección de FAQs -->
     <ActionFAQSComponents />
   </main>
 </template>

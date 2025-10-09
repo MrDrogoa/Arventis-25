@@ -73,33 +73,15 @@
     width: 70px;
     height: 70px;
   }
-
-  .process-step {
-    min-height: 240px;
-  }
-}
-
-/* Contenedor del icono circular */
-.step-icon {
-  width: 64px;
-  height: 64px;
-  background-color: #08b2f7;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 15px rgba(8, 178, 247, 0.3);
-  transition: all 0.3s ease;
 }
 
 /* Líneas conectoras entre pasos */
 .step-connector {
-  position: absolute;
   top: 40px;
   left: 100%;
   width: 80px;
   height: 2px;
   background: linear-gradient(90deg, #08b2f7 0%, #e9ecef 100%);
-  z-index: 1;
 }
 
 @media (min-width: 992px) {
@@ -126,6 +108,7 @@
     margin-left: 0;
   }
   .step-connector {
+    display: none !important;
     width: 60px;
   }
 
@@ -145,13 +128,6 @@
   }
 }
 
-/* Ocultar conectores en tablets y móviles */
-@media (max-width: 991px) {
-  .step-connector {
-    display: none !important;
-  }
-}
-
 /* Último paso no tiene conector */
 .col-lg-2-4:last-child .step-connector,
 .col-md-3:last-child .step-connector {
@@ -163,39 +139,4 @@
 .title-icon:hover {
   color: #08b2f7;
   transition: color 0.3s ease;
-}
-
-/* Texto descriptivo con altura fija */
-.process-step p {
-  flex-grow: 1;
-}
-
-/* Animación de entrada */
-.process-step {
-  animation: fadeInUp 0.6s ease forwards;
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-.process-step:nth-child(1) {
-  animation-delay: 0.1s;
-}
-.process-step:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.process-step:nth-child(3) {
-  animation-delay: 0.3s;
-}
-.process-step:nth-child(4) {
-  animation-delay: 0.4s;
-}
-.process-step:nth-child(5) {
-  animation-delay: 0.5s;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
