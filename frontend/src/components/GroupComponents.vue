@@ -87,8 +87,8 @@ const team = ref([
             <div class="flex-grow-1">
               <h3 class="card-title h5 mb-2 fw-semibold">{{ member.name }}</h3>
               <p class="card-subtitle text-primary fw-medium mt-1">{{ member.position }}</p>
-              <div class="border border-info w-75 my-3 mx-auto"></div>
-              <p class="card-text small text-muted">{{ member.bio }}</p>
+              <div class="border border-info w-75 my-3 mx-auto line-card"></div>
+              <p class="card-text small">{{ member.bio }}</p>
             </div>
             <div
               class="social-links d-flex justify-content-center align-items-center gap-2 mt-auto pt-3"

@@ -3,6 +3,7 @@
     <!-- Hero Section contacto -->
     <HeroContactComponents />
 
+    <!-- Sección de contacto -->
     <section class="contact-section py-5">
       <div class="container">
         <div class="row g-5">
@@ -45,7 +46,7 @@
               aria-label="Formulario de contacto"
             >
               <div class="mb-3">
-                <label for="name" class="form-label">Nombre completo *</label>
+                <label for="name" class="form-label">Nombre completo</label>
                 <input
                   type="text"
                   class="form-control"
@@ -60,7 +61,7 @@
               </div>
 
               <div class="mb-3">
-                <label for="email" class="form-label">Correo electrónico *</label>
+                <label for="email" class="form-label">Correo electrónico</label>
                 <input
                   type="email"
                   class="form-control"
@@ -75,7 +76,7 @@
               </div>
 
               <div class="mb-3">
-                <label for="subject" class="form-label">Asunto *</label>
+                <label for="subject" class="form-label">Asunto</label>
                 <input
                   type="text"
                   class="form-control"
@@ -90,7 +91,7 @@
               </div>
 
               <div class="mb-3">
-                <label for="message" class="form-label">Mensaje *</label>
+                <label for="message" class="form-label">Mensaje</label>
                 <textarea
                   class="form-control textarea-contact"
                   :class="{ 'is-invalid': formSubmitted && !formData.message }"
@@ -124,7 +125,6 @@
                     class="text-decoration-none"
                     >política de privacidad</a
                   >
-                  *
                 </label>
                 <div class="invalid-feedback">Debe aceptar la política de privacidad.</div>
               </div>
@@ -175,6 +175,7 @@
               </div>
             </div>
 
+            <!-- mapa de ubicación -->
             <div class="map-container rounded shadow">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d54994.83828287192!2d-71.22784651062085!3d-30.60145983989152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96901a7f14d2e195%3A0xed8c0065326a4494!2sOvalle%2C%20Coquimbo%2C%20Chile!5e0!3m2!1ses!2sus!4v1651041739909!5m2!1ses!2sus"

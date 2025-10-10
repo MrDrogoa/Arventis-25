@@ -3,6 +3,7 @@
     <!-- Componente Hero para la sección de FAQs -->
     <HeroFAQSComponents :category="category" />
 
+    <!-- Sección de contenido de FAQs -->
     <section class="faq-content py-5">
       <div class="container">
         <div v-if="!category" class="row mb-5">
@@ -278,38 +279,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.accordion-button:not(.collapsed) {
-  background-color: rgba(13, 110, 253, 0.1);
-  color: #0d6efd;
-}
-
-.accordion-button:focus {
-  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-}
-
-.list-group-item:hover {
-  background-color: #f8f9fa;
-}
-
-.list-group-item.active {
-  background-color: #0d6efd;
-  border-color: #0d6efd;
-}
-
-/* Estilo en modo oscuro o de descanso */
-.rest-mode .accordion-button:not(.collapsed) {
-  background-color: var(--accent-bg);
-  color: var(--accent-color);
-}
-
-.rest-mode .list-group-item:hover {
-  background-color: var(--hover-bg);
-}
-
-.accordion-item {
-  margin-bottom: 1rem;
-  border-radius: 0.375rem;
-  overflow: hidden;
-}
-</style>
+<style scoped></style>

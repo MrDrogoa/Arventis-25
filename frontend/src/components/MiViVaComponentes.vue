@@ -59,7 +59,7 @@ const missionVisionValues = [
               class="mission-connector step-connector position-absolute z-index-1 d-none d-lg-block"
             ></div>
             <h5 class="fw-bold mb-2 title-icon reveal-bottom-1">{{ item.title }}</h5>
-            <p class="text-muted small px-2 flex-grow-1 reveal-bottom-1">
+            <p class="small px-2 flex-grow-1 reveal-bottom-1">
               {{ item.description }}
             </p>
           </div>

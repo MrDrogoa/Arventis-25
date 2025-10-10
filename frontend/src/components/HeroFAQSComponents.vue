@@ -36,7 +36,9 @@ const pageTitle = computed(() => {
   <section>
     <article class="page-header bg-faqs py-5">
       <div class="container text-white">
+        <!-- title faqs -->
         <h2 class="display-lg-5 display-4 fw-bold mb-2 reveal-fade">{{ pageTitle }}</h2>
+        <!-- description faqs -->
         <p class="fs-5 mb-4 text-light fw-medium">
           Encuentra respuestas a las preguntas más comunes sobre nuestros servicios y soluciones.
         </p>

@@ -11,6 +11,17 @@
         <i class="bi bi-eye"></i>
       </button>
 
+      <button
+        type="button"
+        class="btn btn-sm btn-outline-secondary"
+        @click="toggleDarkMode"
+        :class="{ active: isDarkMode }"
+        :aria-pressed="isDarkMode"
+        title="Modo oscuro"
+      >
+        <i class="bi bi-moon"></i>
+      </button>
+
       <div class="btn-group" role="group">
         <button
           type="button"
@@ -51,6 +62,7 @@ export default {
   data() {
     return {
       isRestMode: false,
+      isDarkMode: false,
       textSize: "normal",
       improvedLegibility: false,
     };
@@ -63,6 +75,11 @@ export default {
     toggleRestMode() {
       this.isRestMode = !this.isRestMode;
       document.documentElement.classList.toggle("rest-mode", this.isRestMode);
+      this.savePreferences();
+    },
+    toggleDarkMode() {
+      this.isDarkMode = !this.isDarkMode;
+      document.documentElement.classList.toggle("dark-mode", this.isDarkMode);
       this.savePreferences();
     },
     setTextSize(size) {
@@ -84,6 +101,7 @@ export default {
     savePreferences() {
       const preferences = {
         restMode: this.isRestMode,
+        darkMode: this.isDarkMode,
         textSize: this.textSize,
         improvedLegibility: this.improvedLegibility,
       };
@@ -99,6 +117,12 @@ export default {
           if (prefs.restMode) {
             this.isRestMode = true;
             document.documentElement.classList.add("rest-mode");
+          }
+
+          // Aplicar modo oscuro si estaba guardado
+          if (prefs.darkMode) {
+            this.isDarkMode = true;
+            document.documentElement.classList.add("dark-mode");
           }
 
           // Aplicar tamaño de texto

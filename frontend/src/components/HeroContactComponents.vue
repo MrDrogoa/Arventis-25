@@ -10,7 +10,9 @@ setupScrollReveal();
   <section>
     <article class="page-header bg-contact py-5">
       <div class="container text-white">
+        <!-- title contact -->
         <h2 class="display-lg-5 display-4 fw-bold mb-2 reveal-fade">Contacto</h2>
+        <!-- description contact -->
         <p class="fs-5 mb-4 text-light fw-medium">
           Estamos aquí para ayudarle. No dude en ponerse en contacto con nosotros.
         </p>

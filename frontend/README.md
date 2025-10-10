@@ -2,6 +2,138 @@
 
 Proyecto frontend para Arventis - Soluciones tecnológicas innovadoras.
 
+## 🚀 Últimas actualizaciones (10 Oct 2025)
+
+### 🌙 Implementación del sistema de modo oscuro
+
+#### **Nueva funcionalidad de modo oscuro agregada**
+- **Botón con icono de luna**: Implementación de control `bi-moon` en AccessibilityControls
+- **Función `toggleDarkMode()`**: Sistema completo de alternancia entre modo claro y oscuro
+- **Persistencia en localStorage**: Preferencias de usuario guardadas automáticamente
+- **Clase CSS `dark-mode`**: Aplicada dinámicamente al elemento `<html>` raíz
+
+#### **Funcionalidades del modo oscuro**
+```javascript
+toggleDarkMode() {
+  this.isDarkMode = !this.isDarkMode;
+  document.documentElement.classList.toggle("dark-mode", this.isDarkMode);
+  this.savePreferences();
+}
+```
+
+#### **Arquitectura de accesibilidad expandida**
+- **4 controles disponibles**: Modo descanso (ojo), Modo oscuro (luna), Tamaño de texto (fuentes), Legibilidad (type)
+- **Estado persistente**: Sistema robusto de almacenamiento en localStorage con try/catch
+- **Restauración automática**: Preferencias aplicadas al cargar la página
+- **UX mejorada**: Indicadores visuales activos/inactivos en todos los controles
+
+#### **Sistema de preferencias unificado**
+```javascript
+savePreferences() {
+  const preferences = {
+    restMode: this.isRestMode,
+    darkMode: this.isDarkMode,        // ← Nueva preferencia
+    textSize: this.textSize,
+    improvedLegibility: this.improvedLegibility,
+  };
+  localStorage.setItem("accessibilityPreferences", JSON.stringify(preferences));
+}
+```
+
+### 🎨 Refinamientos en componentes principales
+
+#### **AccessibilityControls.vue modernizado**
+- **Toolbar flotante expandido**: 4 controles de accesibilidad en barra inferior derecha
+- **Iconografía Bootstrap**: `bi-eye`, `bi-moon`, `bi-fonts`, `bi-type` para identificación intuitiva
+- **Responsive design**: Textos descriptivos visibles solo en pantallas medianas y grandes
+- **Accesibilidad ARIA**: Atributos `aria-pressed` y `title` para screen readers
+
+#### **Sistema de íconos actualizado**
+- **`bi-moon`**: Representación clara del modo nocturno/oscuro
+- **Consistencia visual**: Mantiene el mismo estilo que controles existentes
+- **Estados activos**: Clase `.active` aplicada dinámicamente según estado
+
+### 🔧 Búsqueda y análisis de funciones de accesibilidad
+
+#### **Auditoría completa del sistema de accesibilidad**
+- **Archivo principal identificado**: `src/components/AccessibilityControls.vue`
+- **5 métodos JavaScript**: `toggleRestMode()`, `toggleDarkMode()`, `setTextSize()`, `toggleLegibility()`, `savePreferences()`, `loadPreferences()`
+- **Persistencia robusta**: Sistema de error handling con console.error para debugging
+- **Aplicación de clases**: Manipulación dinámica del DOM en `document.documentElement`
+
+#### **Funcionalidades técnicas documentadas**
+```javascript
+// Funciones principales del sistema de accesibilidad
+- toggleRestMode(): Activa/desactiva modo descanso visual
+- toggleDarkMode(): Controla modo oscuro (NUEVO)
+- setTextSize(size): Maneja 4 tamaños de texto
+- toggleLegibility(): Mejora contraste y legibilidad
+- savePreferences(): Persiste configuración en localStorage
+- loadPreferences(): Restaura preferencias al iniciar
+```
+
+### 🎯 Preparación para personalización CSS
+
+#### **Arquitectura preparada para colores personalizados**
+- **Clase `.dark-mode` lista**: Sistema preparado para definición de colores custom
+- **Variables CSS recomendadas**: Estructura para `--bg-primary`, `--text-primary`, `--card-bg`, `--border-color`
+- **Selectores específicos**: Jerarquía CSS optimizada para modo oscuro
+- **Import modular**: Sistema preparado para archivo `dark-mode.css` independiente
+
+#### **Template de implementación CSS**
+```css
+/* Estructura recomendada para modo oscuro */
+.dark-mode {
+  --bg-primary: #TU_COLOR_FONDO;
+  --text-primary: #TU_COLOR_TEXTO;
+  --card-bg: #TU_COLOR_TARJETAS;
+  --border-color: #TU_COLOR_BORDES;
+}
+
+.dark-mode body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+```
+
+### 📱 Mejoras de componentes auxiliares
+
+#### **HeroFAQSComponents, FAQsView, HeroContactComponents**
+- **Componentes editados**: Actualizaciones menores en componentes de hero y vistas
+- **Consistencia de diseño**: Mantenimiento de patrones visuales establecidos
+- **Preparación responsive**: Componentes listos para integración con modo oscuro
+
+### 🔍 Investigación y documentación
+
+#### **Búsqueda sistemática de funciones**
+- **Identificación de archivo JavaScript**: Localización exitosa de funcionalidades de accesibilidad
+- **Mapeo de funciones**: Documentación completa de métodos y responsabilidades
+- **Análisis de arquitectura**: Comprensión profunda del sistema de preferencias
+
+### 🎛️ Características del sistema completo
+
+#### **Controles de accesibilidad disponibles**
+1. **Modo descanso visual** (`bi-eye`): Reduce elementos visuales intensos
+2. **Modo oscuro** (`bi-moon`): **NUEVO** - Alterna esquema de colores
+3. **Tamaño de texto** (`bi-fonts`): 4 niveles (normal, large, xlarge, xxlarge)
+4. **Legibilidad mejorada** (`bi-type`): Optimiza contraste y tipografía
+
+#### **Persistencia y UX**
+- **localStorage inteligente**: Manejo de errores y datos corruptos
+- **Aplicación automática**: Restauración inmediata de preferencias
+- **Feedback visual**: Estados activos claramente identificados
+- **Mobile-friendly**: Botones optimizados para touch (min 38px)
+
+### 🎯 Métricas de mejora (10 Oct 2025)
+
+#### **Nueva funcionalidad agregada**: Modo oscuro completo
+#### **Controles de accesibilidad**: 4 funciones disponibles
+#### **Persistencia mejorada**: Sistema robusto con error handling
+#### **Componentes actualizados**: 4 archivos modificados
+#### **Preparación CSS**: Arquitectura lista para personalización
+
+---
+
 ## 🚀 Últimas actualizaciones (9 Oct 2025)
 
 ### 🎨 Optimización de componentes y arquitectura CSS

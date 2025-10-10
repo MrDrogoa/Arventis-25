@@ -27,6 +27,8 @@ import "./views/services.css";
 import "./views/contact.css";
 import "./views/neekworld.css";
 import "./views/not-found.css";
+import "./views/privacy.css";
+import "./views/faqs.css";
 
 // Estilos de accesibilidad
 import "./accessibility.css";
